@@ -16,6 +16,7 @@ yarn-error.log
 .rush
 .devcontainer
 tach-results.*
+.netlify/plugins
 
 documentation/components/searchIndex.json
 
