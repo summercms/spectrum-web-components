@@ -65,9 +65,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-alias-border-radius-regular)
     );
 }
+:host(:dir(ltr)) slot[name='action'] + ::slotted([slot='action']) {
+    /* [dir=ltr] .spectrum-QuickActions .spectrum-ActionButton+.spectrum-ActionButton */
+    margin-left: var(
+        --spectrum-quickactions-button-gap-x,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
 :host([dir='ltr']) slot[name='action'] + ::slotted([slot='action']) {
     /* [dir=ltr] .spectrum-QuickActions .spectrum-ActionButton+.spectrum-ActionButton */
     margin-left: var(
+        --spectrum-quickactions-button-gap-x,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
+:host(:dir(rtl)) slot[name='action'] + ::slotted([slot='action']) {
+    /* [dir=rtl] .spectrum-QuickActions .spectrum-ActionButton+.spectrum-ActionButton */
+    margin-right: var(
         --spectrum-quickactions-button-gap-x,
         var(--spectrum-global-dimension-size-100)
     );
@@ -79,9 +93,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-global-dimension-size-100)
     );
 }
+:host(:dir(ltr)[text-only]) slot[name='action'] + ::slotted([slot='action']) {
+    /* [dir=ltr] .spectrum-QuickActions--textOnly .spectrum-ActionButton+.spectrum-ActionButton */
+    margin-left: var(
+        --spectrum-quickactions-text-button-gap-x,
+        var(--spectrum-global-dimension-size-50)
+    );
+}
 :host([dir='ltr'][text-only]) slot[name='action'] + ::slotted([slot='action']) {
     /* [dir=ltr] .spectrum-QuickActions--textOnly .spectrum-ActionButton+.spectrum-ActionButton */
     margin-left: var(
+        --spectrum-quickactions-text-button-gap-x,
+        var(--spectrum-global-dimension-size-50)
+    );
+}
+:host(:dir(rtl)[text-only]) slot[name='action'] + ::slotted([slot='action']) {
+    /* [dir=rtl] .spectrum-QuickActions--textOnly .spectrum-ActionButton+.spectrum-ActionButton */
+    margin-right: var(
         --spectrum-quickactions-text-button-gap-x,
         var(--spectrum-global-dimension-size-50)
     );

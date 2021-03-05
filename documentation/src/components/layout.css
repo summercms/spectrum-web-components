@@ -97,8 +97,16 @@ header svg {
     justify-content: flex-end;
 }
 
+:host(:dir(ltr)) .manage-theme sp-field-label {
+    margin-left: var(--spectrum-global-dimension-size-400);
+}
+
 :host([dir='ltr']) .manage-theme sp-field-label {
     margin-left: var(--spectrum-global-dimension-size-400);
+}
+
+:host(:dir(rtl)) .manage-theme sp-field-label {
+    margin-right: var(--spectrum-global-dimension-size-400);
 }
 
 :host([dir='rtl']) .manage-theme sp-field-label {

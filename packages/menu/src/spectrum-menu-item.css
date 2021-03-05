@@ -15,9 +15,18 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     transform: scale(1);
     opacity: 1;
 }
+:host(:dir(ltr)) {
+    /* [dir=ltr] .spectrum-Menu-item */
+    border-left: var(--spectrum-listitem-focus-indicator-size) solid transparent;
+}
 :host([dir='ltr']) {
     /* [dir=ltr] .spectrum-Menu-item */
     border-left: var(--spectrum-listitem-focus-indicator-size) solid transparent;
+}
+:host(:dir(rtl)) {
+    /* [dir=rtl] .spectrum-Menu-item */
+    border-right: var(--spectrum-listitem-focus-indicator-size) solid
+        transparent;
 }
 :host([dir='rtl']) {
     /* [dir=rtl] .spectrum-Menu-item */
@@ -45,9 +54,29 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-Menu-item:focus */
     outline: none;
 }
+:host(:dir(ltr)[selected]) {
+    /* [dir=ltr] .spectrum-Menu-item.is-selected */
+    padding-right: calc(
+        var(--spectrum-listitem-padding-right) -
+            var(
+                --spectrum-popover-border-size,
+                var(--spectrum-alias-border-size-thin)
+            )
+    );
+}
 :host([dir='ltr'][selected]) {
     /* [dir=ltr] .spectrum-Menu-item.is-selected */
     padding-right: calc(
+        var(--spectrum-listitem-padding-right) -
+            var(
+                --spectrum-popover-border-size,
+                var(--spectrum-alias-border-size-thin)
+            )
+    );
+}
+:host(:dir(rtl)[selected]) {
+    /* [dir=rtl] .spectrum-Menu-item.is-selected */
+    padding-left: calc(
         var(--spectrum-listitem-padding-right) -
             var(
                 --spectrum-popover-border-size,
@@ -76,11 +105,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     flex-shrink: 0;
     align-self: flex-start;
 }
+:host(:dir(ltr)) slot[name='icon'] + #label,
+:host(:dir(ltr)) .icon + #label {
+    /* [dir=ltr] .spectrum-Menu-item .spectrum-Icon+.spectrum-Menu-itemLabel,
+   * [dir=ltr] .spectrum-Menu-item .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel */
+    margin-left: var(--spectrum-listitem-icon-gap);
+}
 :host([dir='ltr']) slot[name='icon'] + #label,
 :host([dir='ltr']) .icon + #label {
     /* [dir=ltr] .spectrum-Menu-item .spectrum-Icon+.spectrum-Menu-itemLabel,
    * [dir=ltr] .spectrum-Menu-item .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel */
     margin-left: var(--spectrum-listitem-icon-gap);
+}
+:host(:dir(rtl)) slot[name='icon'] + #label,
+:host(:dir(rtl)) .icon + #label {
+    /* [dir=rtl] .spectrum-Menu-item .spectrum-Icon+.spectrum-Menu-itemLabel,
+   * [dir=rtl] .spectrum-Menu-item .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel */
+    margin-right: var(--spectrum-listitem-icon-gap);
 }
 :host([dir='rtl']) slot[name='icon'] + #label,
 :host([dir='rtl']) .icon + #label {
@@ -125,11 +166,23 @@ slot[name='icon'] + #label,
     display: none;
     align-self: flex-start;
 }
+:host(:dir(ltr)) #selected,
+:host(:dir(ltr)) .chevron {
+    /* [dir=ltr] .spectrum-Menu-checkmark,
+   * [dir=ltr] .spectrum-Menu-chevron */
+    margin-left: var(--spectrum-listitem-icon-gap);
+}
 :host([dir='ltr']) #selected,
 :host([dir='ltr']) .chevron {
     /* [dir=ltr] .spectrum-Menu-checkmark,
    * [dir=ltr] .spectrum-Menu-chevron */
     margin-left: var(--spectrum-listitem-icon-gap);
+}
+:host(:dir(rtl)) #selected,
+:host(:dir(rtl)) .chevron {
+    /* [dir=rtl] .spectrum-Menu-checkmark,
+   * [dir=rtl] .spectrum-Menu-chevron */
+    margin-right: var(--spectrum-listitem-icon-gap);
 }
 :host([dir='rtl']) #selected,
 :host([dir='rtl']) .chevron {
@@ -142,6 +195,10 @@ slot[name='icon'] + #label,
    * .spectrum-Menu-chevron */
     flex-grow: 0;
     margin-top: var(--spectrum-listitem-icon-margin-top);
+}
+:host(:dir(rtl)) .chevron {
+    /* [dir=rtl] .spectrum-Menu-chevron */
+    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 :host([dir='rtl']) .chevron {
     /* [dir=rtl] .spectrum-Menu-chevron */
@@ -162,11 +219,29 @@ slot[name='icon'] + #label,
         var(--spectrum-alias-text-color)
     );
 }
+:host(:dir(ltr):focus-visible),
+:host(:dir(ltr)[focused]) {
+    /* [dir=ltr] .spectrum-Menu-item.focus-ring,
+   * [dir=ltr] .spectrum-Menu-item.is-focused */
+    border-left-color: var(
+        --spectrum-listitem-m-focus-indicator-color,
+        var(--spectrum-alias-border-color-focus)
+    );
+}
 :host([dir='ltr']:focus-visible),
 :host([dir='ltr'][focused]) {
     /* [dir=ltr] .spectrum-Menu-item.focus-ring,
    * [dir=ltr] .spectrum-Menu-item.is-focused */
     border-left-color: var(
+        --spectrum-listitem-m-focus-indicator-color,
+        var(--spectrum-alias-border-color-focus)
+    );
+}
+:host(:dir(rtl):focus-visible),
+:host(:dir(rtl)[focused]) {
+    /* [dir=rtl] .spectrum-Menu-item.focus-ring,
+   * [dir=rtl] .spectrum-Menu-item.is-focused */
+    border-right-color: var(
         --spectrum-listitem-m-focus-indicator-color,
         var(--spectrum-alias-border-color-focus)
     );

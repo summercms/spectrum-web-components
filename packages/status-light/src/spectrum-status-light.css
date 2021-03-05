@@ -118,7 +118,7 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-alias-item-height-xl)
     );
 }
-:host([dir]) {
+:host([size]) {
     /* .spectrum-StatusLight */
     --spectrum-statuslight-info-padding-y: var(
         --spectrum-global-dimension-size-65
@@ -162,7 +162,7 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-StatusLight--neutral */
     font-style: italic;
 }
-:host([dir]) {
+:host([size]) {
     /* .spectrum-StatusLight */
     color: var(
         --spectrum-statuslight-info-m-text-color,

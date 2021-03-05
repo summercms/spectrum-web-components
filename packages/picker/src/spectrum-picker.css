@@ -57,10 +57,20 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-Picker:disabled */
     cursor: default;
 }
+:host(:dir(ltr)) #button {
+    /* [dir=ltr] .spectrum-Picker */
+    padding-left: var(--spectrum-picker-textonly-padding-left);
+    padding-right: var(--spectrum-picker-textonly-padding-right);
+}
 :host([dir='ltr']) #button {
     /* [dir=ltr] .spectrum-Picker */
     padding-left: var(--spectrum-picker-textonly-padding-left);
     padding-right: var(--spectrum-picker-textonly-padding-right);
+}
+:host(:dir(rtl)) #button {
+    /* [dir=rtl] .spectrum-Picker */
+    padding-right: var(--spectrum-picker-textonly-padding-left);
+    padding-left: var(--spectrum-picker-textonly-padding-right);
 }
 :host([dir='rtl']) #button {
     /* [dir=rtl] .spectrum-Picker */
@@ -94,9 +104,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     border-width: var(--spectrum-picker-disabled-border-size);
     cursor: default;
 }
+:host(:dir(ltr)) #button .icon {
+    /* [dir=ltr] .spectrum-Picker .spectrum-Picker-icon */
+    margin-right: var(--spectrum-picker-icon-gap);
+}
 :host([dir='ltr']) #button .icon {
     /* [dir=ltr] .spectrum-Picker .spectrum-Picker-icon */
     margin-right: var(--spectrum-picker-icon-gap);
+}
+:host(:dir(rtl)) #button .icon {
+    /* [dir=rtl] .spectrum-Picker .spectrum-Picker-icon */
+    margin-left: var(--spectrum-picker-icon-gap);
 }
 :host([dir='rtl']) #button .icon {
     /* [dir=rtl] .spectrum-Picker .spectrum-Picker-icon */
@@ -106,9 +124,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-Picker .spectrum-Picker-icon */
     flex-shrink: 0;
 }
+:host(:dir(ltr)) #button #label + .icon {
+    /* [dir=ltr] .spectrum-Picker .spectrum-Picker-label+.spectrum-Picker-icon */
+    margin-left: var(--spectrum-picker-icon-gap);
+}
 :host([dir='ltr']) #button #label + .icon {
     /* [dir=ltr] .spectrum-Picker .spectrum-Picker-label+.spectrum-Picker-icon */
     margin-left: var(--spectrum-picker-icon-gap);
+}
+:host(:dir(rtl)) #button #label + .icon {
+    /* [dir=rtl] .spectrum-Picker .spectrum-Picker-label+.spectrum-Picker-icon */
+    margin-right: var(--spectrum-picker-icon-gap);
 }
 :host([dir='rtl']) #button #label + .icon {
     /* [dir=rtl] .spectrum-Picker .spectrum-Picker-label+.spectrum-Picker-icon */
@@ -375,9 +401,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
    * .spectrum-Picker--quiet:disabled.focus-ring */
     box-shadow: none;
 }
+:host(:dir(ltr)) #label {
+    /* [dir=ltr] .spectrum-Picker-label */
+    text-align: left;
+}
 :host([dir='ltr']) #label {
     /* [dir=ltr] .spectrum-Picker-label */
     text-align: left;
+}
+:host(:dir(rtl)) #label {
+    /* [dir=rtl] .spectrum-Picker-label */
+    text-align: right;
 }
 :host([dir='rtl']) #label {
     /* [dir=rtl] .spectrum-Picker-label */
@@ -413,17 +447,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         ease-out;
     flex-shrink: 0;
 }
+:host(:dir(ltr)) .validationIcon {
+    /* [dir=ltr] .spectrum-Picker-validationIcon */
+    margin-left: var(--spectrum-picker-error-icon-margin-left);
+}
 :host([dir='ltr']) .validationIcon {
     /* [dir=ltr] .spectrum-Picker-validationIcon */
     margin-left: var(--spectrum-picker-error-icon-margin-left);
+}
+:host(:dir(rtl)) .validationIcon {
+    /* [dir=rtl] .spectrum-Picker-validationIcon */
+    margin-right: var(--spectrum-picker-error-icon-margin-left);
 }
 :host([dir='rtl']) .validationIcon {
     /* [dir=rtl] .spectrum-Picker-validationIcon */
     margin-right: var(--spectrum-picker-error-icon-margin-left);
 }
+:host(:dir(ltr)) #label ~ .picker {
+    /* [dir=ltr] .spectrum-Picker-label~.spectrum-Picker-menuIcon */
+    margin-left: var(--spectrum-picker-ui-icon-gap);
+}
 :host([dir='ltr']) #label ~ .picker {
     /* [dir=ltr] .spectrum-Picker-label~.spectrum-Picker-menuIcon */
     margin-left: var(--spectrum-picker-ui-icon-gap);
+}
+:host(:dir(rtl)) #label ~ .picker {
+    /* [dir=rtl] .spectrum-Picker-label~.spectrum-Picker-menuIcon */
+    margin-right: var(--spectrum-picker-ui-icon-gap);
 }
 :host([dir='rtl']) #label ~ .picker {
     /* [dir=rtl] .spectrum-Picker-label~.spectrum-Picker-menuIcon */
@@ -433,9 +483,35 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-Picker-popover */
     max-width: var(--spectrum-picker-popover-max-width);
 }
+:host(:dir(ltr)) .spectrum-Picker-popover--quiet {
+    /* [dir=ltr] .spectrum-Picker-popover--quiet */
+    margin-left: calc(
+        -1 * (var(
+                        --spectrum-picker-quiet-m-popover-offset-x,
+                        var(--spectrum-global-dimension-size-150)
+                    ) +
+                    var(
+                        --spectrum-popover-border-size,
+                        var(--spectrum-alias-border-size-thin)
+                    ))
+    );
+}
 :host([dir='ltr']) .spectrum-Picker-popover--quiet {
     /* [dir=ltr] .spectrum-Picker-popover--quiet */
     margin-left: calc(
+        -1 * (var(
+                        --spectrum-picker-quiet-m-popover-offset-x,
+                        var(--spectrum-global-dimension-size-150)
+                    ) +
+                    var(
+                        --spectrum-popover-border-size,
+                        var(--spectrum-alias-border-size-thin)
+                    ))
+    );
+}
+:host(:dir(rtl)) .spectrum-Picker-popover--quiet {
+    /* [dir=rtl] .spectrum-Picker-popover--quiet */
+    margin-right: calc(
         -1 * (var(
                         --spectrum-picker-quiet-m-popover-offset-x,
                         var(--spectrum-global-dimension-size-150)

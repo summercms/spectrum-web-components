@@ -33,9 +33,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     --spectrum-dialog-confirm-exit-animation-delay: 0ms;
     --spectrum-tray-margin-top: 64px;
 }
+:host(:dir(ltr)) .spectrum-Tray-wrapper {
+    /* [dir=ltr] .spectrum-Tray-wrapper */
+    left: 0;
+}
 :host([dir='ltr']) .spectrum-Tray-wrapper {
     /* [dir=ltr] .spectrum-Tray-wrapper */
     left: 0;
+}
+:host(:dir(rtl)) .spectrum-Tray-wrapper {
+    /* [dir=rtl] .spectrum-Tray-wrapper */
+    right: 0;
 }
 :host([dir='rtl']) .spectrum-Tray-wrapper {
     /* [dir=rtl] .spectrum-Tray-wrapper */

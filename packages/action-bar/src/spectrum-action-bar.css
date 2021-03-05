@@ -46,17 +46,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     );
     opacity: 1;
 }
+:host(:dir(ltr)[variant='sticky']) {
+    /* [dir=ltr] .spectrum-ActionBar--sticky */
+    left: 0;
+}
 :host([dir='ltr'][variant='sticky']) {
     /* [dir=ltr] .spectrum-ActionBar--sticky */
     left: 0;
+}
+:host(:dir(rtl)[variant='sticky']) {
+    /* [dir=rtl] .spectrum-ActionBar--sticky */
+    right: 0;
 }
 :host([dir='rtl'][variant='sticky']) {
     /* [dir=rtl] .spectrum-ActionBar--sticky */
     right: 0;
 }
+:host(:dir(ltr)[variant='sticky']) {
+    /* [dir=ltr] .spectrum-ActionBar--sticky */
+    right: 0;
+}
 :host([dir='ltr'][variant='sticky']) {
     /* [dir=ltr] .spectrum-ActionBar--sticky */
     right: 0;
+}
+:host(:dir(rtl)[variant='sticky']) {
+    /* [dir=rtl] .spectrum-ActionBar--sticky */
+    left: 0;
 }
 :host([dir='rtl'][variant='sticky']) {
     /* [dir=rtl] .spectrum-ActionBar--sticky */
@@ -74,17 +90,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-ActionBar--fixed */
     position: fixed;
 }
+:host(:dir(ltr)) #popover {
+    /* [dir=ltr] .spectrum-ActionBar-popover */
+    padding-left: var(--spectrum-actionbar-padding-left);
+}
 :host([dir='ltr']) #popover {
     /* [dir=ltr] .spectrum-ActionBar-popover */
     padding-left: var(--spectrum-actionbar-padding-left);
+}
+:host(:dir(rtl)) #popover {
+    /* [dir=rtl] .spectrum-ActionBar-popover */
+    padding-right: var(--spectrum-actionbar-padding-left);
 }
 :host([dir='rtl']) #popover {
     /* [dir=rtl] .spectrum-ActionBar-popover */
     padding-right: var(--spectrum-actionbar-padding-left);
 }
+:host(:dir(ltr)) #popover {
+    /* [dir=ltr] .spectrum-ActionBar-popover */
+    padding-right: var(--spectrum-actionbar-padding-right);
+}
 :host([dir='ltr']) #popover {
     /* [dir=ltr] .spectrum-ActionBar-popover */
     padding-right: var(--spectrum-actionbar-padding-right);
+}
+:host(:dir(rtl)) #popover {
+    /* [dir=rtl] .spectrum-ActionBar-popover */
+    padding-left: var(--spectrum-actionbar-padding-right);
 }
 :host([dir='rtl']) #popover {
     /* [dir=rtl] .spectrum-ActionBar-popover */

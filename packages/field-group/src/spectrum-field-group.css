@@ -17,9 +17,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     vertical-align: top;
     flex-wrap: wrap;
 }
+:host(:dir(ltr)[horizontal]) .spectrum-FieldGroup-item:not(:last-child) {
+    /* [dir=ltr] .spectrum-FieldGroup--horizontal .spectrum-FieldGroup-item:not(:last-child) */
+    margin-right: var(--spectrum-fieldgroup-margin);
+}
 :host([dir='ltr'][horizontal]) .spectrum-FieldGroup-item:not(:last-child) {
     /* [dir=ltr] .spectrum-FieldGroup--horizontal .spectrum-FieldGroup-item:not(:last-child) */
     margin-right: var(--spectrum-fieldgroup-margin);
+}
+:host(:dir(rtl)[horizontal]) .spectrum-FieldGroup-item:not(:last-child) {
+    /* [dir=rtl] .spectrum-FieldGroup--horizontal .spectrum-FieldGroup-item:not(:last-child) */
+    margin-left: var(--spectrum-fieldgroup-margin);
 }
 :host([dir='rtl'][horizontal]) .spectrum-FieldGroup-item:not(:last-child) {
     /* [dir=rtl] .spectrum-FieldGroup--horizontal .spectrum-FieldGroup-item:not(:last-child) */

@@ -23,9 +23,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         --spectrum-global-dimension-size-130
     );
 }
+:host(:dir(ltr)) {
+    /* [dir=ltr] .spectrum-Toast */
+    padding-right: var(
+        --spectrum-toast-neutral-padding-right,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
 :host([dir='ltr']) {
     /* [dir=ltr] .spectrum-Toast */
     padding-right: var(
+        --spectrum-toast-neutral-padding-right,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
+:host(:dir(rtl)) {
+    /* [dir=rtl] .spectrum-Toast */
+    padding-left: var(
         --spectrum-toast-neutral-padding-right,
         var(--spectrum-global-dimension-size-100)
     );
@@ -37,9 +51,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-global-dimension-size-100)
     );
 }
+:host(:dir(ltr)) {
+    /* [dir=ltr] .spectrum-Toast */
+    padding-left: var(
+        --spectrum-toast-neutral-padding-left,
+        var(--spectrum-global-dimension-size-200)
+    );
+}
 :host([dir='ltr']) {
     /* [dir=ltr] .spectrum-Toast */
     padding-left: var(
+        --spectrum-toast-neutral-padding-left,
+        var(--spectrum-global-dimension-size-200)
+    );
+}
+:host(:dir(rtl)) {
+    /* [dir=rtl] .spectrum-Toast */
+    padding-right: var(
         --spectrum-toast-neutral-padding-left,
         var(--spectrum-global-dimension-size-200)
     );
@@ -79,9 +107,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     );
     -webkit-font-smoothing: antialiased;
 }
+:host(:dir(ltr)) .type {
+    /* [dir=ltr] .spectrum-Toast-typeIcon */
+    margin-right: var(
+        --spectrum-toast-neutral-icon-padding-right,
+        var(--spectrum-global-dimension-size-150)
+    );
+}
 :host([dir='ltr']) .type {
     /* [dir=ltr] .spectrum-Toast-typeIcon */
     margin-right: var(
+        --spectrum-toast-neutral-icon-padding-right,
+        var(--spectrum-global-dimension-size-150)
+    );
+}
+:host(:dir(rtl)) .type {
+    /* [dir=rtl] .spectrum-Toast-typeIcon */
+    margin-left: var(
         --spectrum-toast-neutral-icon-padding-right,
         var(--spectrum-global-dimension-size-150)
     );
@@ -93,9 +135,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-global-dimension-size-150)
     );
 }
+:host(:dir(ltr)) .type {
+    /* [dir=ltr] .spectrum-Toast-typeIcon */
+    margin-left: 0;
+}
 :host([dir='ltr']) .type {
     /* [dir=ltr] .spectrum-Toast-typeIcon */
     margin-left: 0;
+}
+:host(:dir(rtl)) .type {
+    /* [dir=rtl] .spectrum-Toast-typeIcon */
+    margin-right: 0;
 }
 :host([dir='rtl']) .type {
     /* [dir=rtl] .spectrum-Toast-typeIcon */
@@ -108,9 +158,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     margin-top: var(--spectrum-toast-icon-padding-y);
     margin-bottom: var(--spectrum-toast-icon-padding-y);
 }
+:host(:dir(ltr)) .content {
+    /* [dir=ltr] .spectrum-Toast-content */
+    padding-right: var(
+        --spectrum-toast-neutral-content-padding-right,
+        var(--spectrum-global-dimension-size-200)
+    );
+}
 :host([dir='ltr']) .content {
     /* [dir=ltr] .spectrum-Toast-content */
     padding-right: var(
+        --spectrum-toast-neutral-content-padding-right,
+        var(--spectrum-global-dimension-size-200)
+    );
+}
+:host(:dir(rtl)) .content {
+    /* [dir=rtl] .spectrum-Toast-content */
+    padding-left: var(
         --spectrum-toast-neutral-content-padding-right,
         var(--spectrum-global-dimension-size-200)
     );
@@ -122,17 +186,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-global-dimension-size-200)
     );
 }
+:host(:dir(ltr)) .content {
+    /* [dir=ltr] .spectrum-Toast-content */
+    padding-left: 0;
+}
 :host([dir='ltr']) .content {
     /* [dir=ltr] .spectrum-Toast-content */
     padding-left: 0;
+}
+:host(:dir(rtl)) .content {
+    /* [dir=rtl] .spectrum-Toast-content */
+    padding-right: 0;
 }
 :host([dir='rtl']) .content {
     /* [dir=rtl] .spectrum-Toast-content */
     padding-right: 0;
 }
+:host(:dir(ltr)) .content {
+    /* [dir=ltr] .spectrum-Toast-content */
+    text-align: left;
+}
 :host([dir='ltr']) .content {
     /* [dir=ltr] .spectrum-Toast-content */
     text-align: left;
+}
+:host(:dir(rtl)) .content {
+    /* [dir=rtl] .spectrum-Toast-content */
+    text-align: right;
 }
 :host([dir='rtl']) .content {
     /* [dir=rtl] .spectrum-Toast-content */
@@ -167,6 +247,19 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     flex: 0 0 auto;
     align-items: flex-start;
 }
+:host(:dir(ltr)) .buttons slot[name='action'] + ::slotted([slot='action']),
+:host(:dir(ltr)) .buttons slot[name='action'] + .spectrum-ClearButton,
+:host(:dir(ltr)) .buttons .spectrum-ClearButton + ::slotted([slot='action']),
+:host(:dir(ltr)) .buttons .spectrum-ClearButton + .spectrum-ClearButton {
+    /* [dir=ltr] .spectrum-Toast-buttons .spectrum-Button+.spectrum-Button,
+   * [dir=ltr] .spectrum-Toast-buttons .spectrum-Button+.spectrum-ClearButton,
+   * [dir=ltr] .spectrum-Toast-buttons .spectrum-ClearButton+.spectrum-Button,
+   * [dir=ltr] .spectrum-Toast-buttons .spectrum-ClearButton+.spectrum-ClearButton */
+    margin-left: var(
+        --spectrum-toast-neutral-button-gap-x,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
 :host([dir='ltr']) .buttons slot[name='action'] + ::slotted([slot='action']),
 :host([dir='ltr']) .buttons slot[name='action'] + .spectrum-ClearButton,
 :host([dir='ltr']) .buttons .spectrum-ClearButton + ::slotted([slot='action']),
@@ -176,6 +269,19 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
    * [dir=ltr] .spectrum-Toast-buttons .spectrum-ClearButton+.spectrum-Button,
    * [dir=ltr] .spectrum-Toast-buttons .spectrum-ClearButton+.spectrum-ClearButton */
     margin-left: var(
+        --spectrum-toast-neutral-button-gap-x,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
+:host(:dir(rtl)) .buttons slot[name='action'] + ::slotted([slot='action']),
+:host(:dir(rtl)) .buttons slot[name='action'] + .spectrum-ClearButton,
+:host(:dir(rtl)) .buttons .spectrum-ClearButton + ::slotted([slot='action']),
+:host(:dir(rtl)) .buttons .spectrum-ClearButton + .spectrum-ClearButton {
+    /* [dir=rtl] .spectrum-Toast-buttons .spectrum-Button+.spectrum-Button,
+   * [dir=rtl] .spectrum-Toast-buttons .spectrum-Button+.spectrum-ClearButton,
+   * [dir=rtl] .spectrum-Toast-buttons .spectrum-ClearButton+.spectrum-Button,
+   * [dir=rtl] .spectrum-Toast-buttons .spectrum-ClearButton+.spectrum-ClearButton */
+    margin-right: var(
         --spectrum-toast-neutral-button-gap-x,
         var(--spectrum-global-dimension-size-100)
     );
@@ -198,25 +304,55 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     flex: 1 1 auto;
     align-self: center;
 }
+:host(:dir(ltr)) .body ::slotted([slot='action']) {
+    /* [dir=ltr] .spectrum-Toast-body .spectrum-Button */
+    float: right;
+}
 :host([dir='ltr']) .body ::slotted([slot='action']) {
     /* [dir=ltr] .spectrum-Toast-body .spectrum-Button */
     float: right;
+}
+:host(:dir(rtl)) .body ::slotted([slot='action']) {
+    /* [dir=rtl] .spectrum-Toast-body .spectrum-Button */
+    float: left;
 }
 :host([dir='rtl']) .body ::slotted([slot='action']) {
     /* [dir=rtl] .spectrum-Toast-body .spectrum-Button */
     float: left;
 }
+:host(:dir(ltr)) .body ::slotted([slot='action']) {
+    /* [dir=ltr] .spectrum-Toast-body .spectrum-Button */
+    margin-right: var(--spectrum-toast-button-margin-right);
+}
 :host([dir='ltr']) .body ::slotted([slot='action']) {
     /* [dir=ltr] .spectrum-Toast-body .spectrum-Button */
     margin-right: var(--spectrum-toast-button-margin-right);
+}
+:host(:dir(rtl)) .body ::slotted([slot='action']) {
+    /* [dir=rtl] .spectrum-Toast-body .spectrum-Button */
+    margin-left: var(--spectrum-toast-button-margin-right);
 }
 :host([dir='rtl']) .body ::slotted([slot='action']) {
     /* [dir=rtl] .spectrum-Toast-body .spectrum-Button */
     margin-left: var(--spectrum-toast-button-margin-right);
 }
+:host(:dir(ltr)) .body + .buttons {
+    /* [dir=ltr] .spectrum-Toast-body+.spectrum-Toast-buttons */
+    padding-left: var(
+        --spectrum-toast-neutral-padding-right,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
 :host([dir='ltr']) .body + .buttons {
     /* [dir=ltr] .spectrum-Toast-body+.spectrum-Toast-buttons */
     padding-left: var(
+        --spectrum-toast-neutral-padding-right,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
+:host(:dir(rtl)) .body + .buttons {
+    /* [dir=rtl] .spectrum-Toast-body+.spectrum-Toast-buttons */
+    padding-right: var(
         --spectrum-toast-neutral-padding-right,
         var(--spectrum-global-dimension-size-100)
     );
@@ -228,17 +364,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-global-dimension-size-100)
     );
 }
+:host(:dir(ltr)) .body + .buttons {
+    /* [dir=ltr] .spectrum-Toast-body+.spectrum-Toast-buttons */
+    border-left-width: 1px;
+}
 :host([dir='ltr']) .body + .buttons {
     /* [dir=ltr] .spectrum-Toast-body+.spectrum-Toast-buttons */
     border-left-width: 1px;
+}
+:host(:dir(rtl)) .body + .buttons {
+    /* [dir=rtl] .spectrum-Toast-body+.spectrum-Toast-buttons */
+    border-right-width: 1px;
 }
 :host([dir='rtl']) .body + .buttons {
     /* [dir=rtl] .spectrum-Toast-body+.spectrum-Toast-buttons */
     border-right-width: 1px;
 }
+:host(:dir(ltr)) .body + .buttons {
+    /* [dir=ltr] .spectrum-Toast-body+.spectrum-Toast-buttons */
+    border-left-style: solid;
+}
 :host([dir='ltr']) .body + .buttons {
     /* [dir=ltr] .spectrum-Toast-body+.spectrum-Toast-buttons */
     border-left-style: solid;
+}
+:host(:dir(rtl)) .body + .buttons {
+    /* [dir=rtl] .spectrum-Toast-body+.spectrum-Toast-buttons */
+    border-right-style: solid;
 }
 :host([dir='rtl']) .body + .buttons {
     /* [dir=rtl] .spectrum-Toast-body+.spectrum-Toast-buttons */
@@ -266,9 +418,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-Toast-typeIcon */
     color: #fff;
 }
+:host(:dir(ltr)) .buttons {
+    /* [dir=ltr] .spectrum-Toast-buttons */
+    border-left-color: hsla(0, 0%, 100%, 0.2);
+}
 :host([dir='ltr']) .buttons {
     /* [dir=ltr] .spectrum-Toast-buttons */
     border-left-color: hsla(0, 0%, 100%, 0.2);
+}
+:host(:dir(rtl)) .buttons {
+    /* [dir=rtl] .spectrum-Toast-buttons */
+    border-right-color: hsla(0, 0%, 100%, 0.2);
 }
 :host([dir='rtl']) .buttons {
     /* [dir=rtl] .spectrum-Toast-buttons */

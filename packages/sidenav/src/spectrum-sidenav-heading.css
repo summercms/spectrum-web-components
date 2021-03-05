@@ -17,25 +17,55 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     margin: 0;
     padding: 0;
 }
+:host(:dir(ltr)) .spectrum-SideNav-itemLink:focus-visible:before {
+    /* [dir=ltr] .spectrum-SideNav-itemLink.focus-ring:before */
+    left: 0;
+}
 :host([dir='ltr']) .spectrum-SideNav-itemLink:focus-visible:before {
     /* [dir=ltr] .spectrum-SideNav-itemLink.focus-ring:before */
     left: 0;
 }
+:host(:dir(rtl)) .spectrum-SideNav-itemLink:focus-visible:before {
+    /* [dir=rtl] .spectrum-SideNav-itemLink.focus-ring:before */
+    right: 0;
+}
 :host([dir='rtl']) .spectrum-SideNav-itemLink:focus-visible:before {
     /* [dir=rtl] .spectrum-SideNav-itemLink.focus-ring:before */
+    right: 0;
+}
+:host(:dir(ltr)) .spectrum-SideNav-itemLink:focus-visible:before {
+    /* [dir=ltr] .spectrum-SideNav-itemLink.focus-ring:before */
     right: 0;
 }
 :host([dir='ltr']) .spectrum-SideNav-itemLink:focus-visible:before {
     /* [dir=ltr] .spectrum-SideNav-itemLink.focus-ring:before */
     right: 0;
 }
+:host(:dir(rtl)) .spectrum-SideNav-itemLink:focus-visible:before {
+    /* [dir=rtl] .spectrum-SideNav-itemLink.focus-ring:before */
+    left: 0;
+}
 :host([dir='rtl']) .spectrum-SideNav-itemLink:focus-visible:before {
     /* [dir=rtl] .spectrum-SideNav-itemLink.focus-ring:before */
     left: 0;
+}
+:host(:dir(ltr)) .spectrum-SideNav-itemLink .spectrum-SideNav-itemIcon {
+    /* [dir=ltr] .spectrum-SideNav-itemLink .spectrum-SideNav-itemIcon */
+    margin-right: var(
+        --spectrum-sidenav-icon-gap,
+        var(--spectrum-global-dimension-size-100)
+    );
 }
 :host([dir='ltr']) .spectrum-SideNav-itemLink .spectrum-SideNav-itemIcon {
     /* [dir=ltr] .spectrum-SideNav-itemLink .spectrum-SideNav-itemIcon */
     margin-right: var(
+        --spectrum-sidenav-icon-gap,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
+:host(:dir(rtl)) .spectrum-SideNav-itemLink .spectrum-SideNav-itemIcon {
+    /* [dir=rtl] .spectrum-SideNav-itemLink .spectrum-SideNav-itemIcon */
+    margin-left: var(
         --spectrum-sidenav-icon-gap,
         var(--spectrum-global-dimension-size-100)
     );
@@ -47,17 +77,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-global-dimension-size-100)
     );
 }
+:host(:dir(ltr)) #heading {
+    /* [dir=ltr] .spectrum-SideNav-heading */
+    margin-right: 0;
+}
 :host([dir='ltr']) #heading {
     /* [dir=ltr] .spectrum-SideNav-heading */
     margin-right: 0;
+}
+:host(:dir(rtl)) #heading {
+    /* [dir=rtl] .spectrum-SideNav-heading */
+    margin-left: 0;
 }
 :host([dir='rtl']) #heading {
     /* [dir=rtl] .spectrum-SideNav-heading */
     margin-left: 0;
 }
+:host(:dir(ltr)) #heading {
+    /* [dir=ltr] .spectrum-SideNav-heading */
+    margin-left: 0;
+}
 :host([dir='ltr']) #heading {
     /* [dir=ltr] .spectrum-SideNav-heading */
     margin-left: 0;
+}
+:host(:dir(rtl)) #heading {
+    /* [dir=rtl] .spectrum-SideNav-heading */
+    margin-right: 0;
 }
 :host([dir='rtl']) #heading {
     /* [dir=rtl] .spectrum-SideNav-heading */
@@ -110,12 +156,44 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     );
     text-transform: uppercase;
 }
+:host(:dir(ltr))
+    .spectrum-SideNav--multiLevel
+    #list
+    .spectrum-SideNav-itemLink {
+    /* [dir=ltr] .spectrum-SideNav--multiLevel .spectrum-SideNav .spectrum-SideNav-itemLink */
+    padding-left: calc(
+        var(
+                --spectrum-sidenav-multilevel-item-indentation,
+                var(--spectrum-global-dimension-size-150)
+            ) +
+            var(
+                --spectrum-sidenav-item-padding-x,
+                var(--spectrum-global-dimension-size-150)
+            )
+    );
+}
 :host([dir='ltr'])
     .spectrum-SideNav--multiLevel
     #list
     .spectrum-SideNav-itemLink {
     /* [dir=ltr] .spectrum-SideNav--multiLevel .spectrum-SideNav .spectrum-SideNav-itemLink */
     padding-left: calc(
+        var(
+                --spectrum-sidenav-multilevel-item-indentation,
+                var(--spectrum-global-dimension-size-150)
+            ) +
+            var(
+                --spectrum-sidenav-item-padding-x,
+                var(--spectrum-global-dimension-size-150)
+            )
+    );
+}
+:host(:dir(rtl))
+    .spectrum-SideNav--multiLevel
+    #list
+    .spectrum-SideNav-itemLink {
+    /* [dir=rtl] .spectrum-SideNav--multiLevel .spectrum-SideNav .spectrum-SideNav-itemLink */
+    padding-right: calc(
         var(
                 --spectrum-sidenav-multilevel-item-indentation,
                 var(--spectrum-global-dimension-size-150)
@@ -142,6 +220,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
             )
     );
 }
+:host(:dir(ltr))
+    .spectrum-SideNav--multiLevel
+    #list
+    #list
+    .spectrum-SideNav-itemLink {
+    /* [dir=ltr] .spectrum-SideNav--multiLevel .spectrum-SideNav .spectrum-SideNav .spectrum-SideNav-itemLink */
+    padding-left: calc(
+        var(
+                --spectrum-sidenav-multilevel-item-indentation,
+                var(--spectrum-global-dimension-size-150)
+            ) +
+            var(
+                --spectrum-sidenav-item-padding-x,
+                var(--spectrum-global-dimension-size-150)
+            )
+    );
+}
 :host([dir='ltr'])
     .spectrum-SideNav--multiLevel
     #list
@@ -149,6 +244,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     .spectrum-SideNav-itemLink {
     /* [dir=ltr] .spectrum-SideNav--multiLevel .spectrum-SideNav .spectrum-SideNav .spectrum-SideNav-itemLink */
     padding-left: calc(
+        var(
+                --spectrum-sidenav-multilevel-item-indentation,
+                var(--spectrum-global-dimension-size-150)
+            ) +
+            var(
+                --spectrum-sidenav-item-padding-x,
+                var(--spectrum-global-dimension-size-150)
+            )
+    );
+}
+:host(:dir(rtl))
+    .spectrum-SideNav--multiLevel
+    #list
+    #list
+    .spectrum-SideNav-itemLink {
+    /* [dir=rtl] .spectrum-SideNav--multiLevel .spectrum-SideNav .spectrum-SideNav .spectrum-SideNav-itemLink */
+    padding-right: calc(
         var(
                 --spectrum-sidenav-multilevel-item-indentation,
                 var(--spectrum-global-dimension-size-150)

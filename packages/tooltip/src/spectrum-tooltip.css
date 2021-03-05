@@ -189,9 +189,35 @@ p {
         -1 * var(--spectrum-tooltip-tip-width, var(--spectrum-global-dimension-size-100))
     );
 }
+:host(:dir(ltr)) ::slotted([slot='icon']) {
+    /* [dir=ltr] .spectrum-Tooltip-typeIcon */
+    margin-left: calc(
+        var(
+                --spectrum-tooltip-icon-margin-x,
+                var(--spectrum-global-dimension-size-100)
+            ) -
+            var(
+                --spectrum-tooltip-padding-x,
+                var(--spectrum-global-dimension-size-125)
+            )
+    );
+}
 :host([dir='ltr']) ::slotted([slot='icon']) {
     /* [dir=ltr] .spectrum-Tooltip-typeIcon */
     margin-left: calc(
+        var(
+                --spectrum-tooltip-icon-margin-x,
+                var(--spectrum-global-dimension-size-100)
+            ) -
+            var(
+                --spectrum-tooltip-padding-x,
+                var(--spectrum-global-dimension-size-125)
+            )
+    );
+}
+:host(:dir(rtl)) ::slotted([slot='icon']) {
+    /* [dir=rtl] .spectrum-Tooltip-typeIcon */
+    margin-right: calc(
         var(
                 --spectrum-tooltip-icon-margin-x,
                 var(--spectrum-global-dimension-size-100)
@@ -215,9 +241,23 @@ p {
             )
     );
 }
+:host(:dir(ltr)) ::slotted([slot='icon']) {
+    /* [dir=ltr] .spectrum-Tooltip-typeIcon */
+    margin-right: var(
+        --spectrum-tooltip-icon-margin-x,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
 :host([dir='ltr']) ::slotted([slot='icon']) {
     /* [dir=ltr] .spectrum-Tooltip-typeIcon */
     margin-right: var(
+        --spectrum-tooltip-icon-margin-x,
+        var(--spectrum-global-dimension-size-100)
+    );
+}
+:host(:dir(rtl)) ::slotted([slot='icon']) {
+    /* [dir=rtl] .spectrum-Tooltip-typeIcon */
+    margin-left: var(
         --spectrum-tooltip-icon-margin-x,
         var(--spectrum-global-dimension-size-100)
     );

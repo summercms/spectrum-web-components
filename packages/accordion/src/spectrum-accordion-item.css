@@ -10,9 +10,23 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 
 THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
+:host(:dir(ltr)) #indicator {
+    /* [dir=ltr] .spectrum-Accordion-itemIndicator */
+    left: var(
+        --spectrum-accordion-item-padding-x,
+        var(--spectrum-global-dimension-size-225)
+    );
+}
 :host([dir='ltr']) #indicator {
     /* [dir=ltr] .spectrum-Accordion-itemIndicator */
     left: var(
+        --spectrum-accordion-item-padding-x,
+        var(--spectrum-global-dimension-size-225)
+    );
+}
+:host(:dir(rtl)) #indicator {
+    /* [dir=rtl] .spectrum-Accordion-itemIndicator */
+    right: var(
         --spectrum-accordion-item-padding-x,
         var(--spectrum-global-dimension-size-225)
     );
@@ -23,6 +37,10 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         --spectrum-accordion-item-padding-x,
         var(--spectrum-global-dimension-size-225)
     );
+}
+:host(:dir(rtl)) #indicator {
+    /* [dir=rtl] .spectrum-Accordion-itemIndicator */
+    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 :host([dir='rtl']) #indicator {
     /* [dir=rtl] .spectrum-Accordion-itemIndicator */
@@ -67,9 +85,51 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     position: relative;
     box-sizing: border-box;
 }
+:host(:dir(ltr)) #header {
+    /* [dir=ltr] .spectrum-Accordion-itemHeader */
+    padding-left: calc(
+        var(
+                --spectrum-accordion-item-padding-x,
+                var(--spectrum-global-dimension-size-225)
+            ) +
+            var(
+                --spectrum-accordion-icon-width,
+                var(--spectrum-global-dimension-size-75)
+            ) +
+            var(
+                --spectrum-accordion-icon-gap,
+                var(--spectrum-global-dimension-size-100)
+            ) +
+            var(
+                --spectrum-accordion-item-border-left-size-key-focus,
+                var(--spectrum-alias-border-size-thick)
+            )
+    );
+}
 :host([dir='ltr']) #header {
     /* [dir=ltr] .spectrum-Accordion-itemHeader */
     padding-left: calc(
+        var(
+                --spectrum-accordion-item-padding-x,
+                var(--spectrum-global-dimension-size-225)
+            ) +
+            var(
+                --spectrum-accordion-icon-width,
+                var(--spectrum-global-dimension-size-75)
+            ) +
+            var(
+                --spectrum-accordion-icon-gap,
+                var(--spectrum-global-dimension-size-100)
+            ) +
+            var(
+                --spectrum-accordion-item-border-left-size-key-focus,
+                var(--spectrum-alias-border-size-thick)
+            )
+    );
+}
+:host(:dir(rtl)) #header {
+    /* [dir=rtl] .spectrum-Accordion-itemHeader */
+    padding-right: calc(
         var(
                 --spectrum-accordion-item-padding-x,
                 var(--spectrum-global-dimension-size-225)
@@ -109,9 +169,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
             )
     );
 }
+:host(:dir(ltr)) #header {
+    /* [dir=ltr] .spectrum-Accordion-itemHeader */
+    padding-right: var(
+        --spectrum-accordion-item-padding-x,
+        var(--spectrum-global-dimension-size-225)
+    );
+}
 :host([dir='ltr']) #header {
     /* [dir=ltr] .spectrum-Accordion-itemHeader */
     padding-right: var(
+        --spectrum-accordion-item-padding-x,
+        var(--spectrum-global-dimension-size-225)
+    );
+}
+:host(:dir(rtl)) #header {
+    /* [dir=rtl] .spectrum-Accordion-itemHeader */
+    padding-left: var(
         --spectrum-accordion-item-padding-x,
         var(--spectrum-global-dimension-size-225)
     );
@@ -123,9 +197,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-global-dimension-size-225)
     );
 }
+:host(:dir(ltr)) #header {
+    /* [dir=ltr] .spectrum-Accordion-itemHeader */
+    text-align: left;
+}
 :host([dir='ltr']) #header {
     /* [dir=ltr] .spectrum-Accordion-itemHeader */
     text-align: left;
+}
+:host(:dir(rtl)) #header {
+    /* [dir=rtl] .spectrum-Accordion-itemHeader */
+    text-align: right;
 }
 :host([dir='rtl']) #header {
     /* [dir=rtl] .spectrum-Accordion-itemHeader */
@@ -169,9 +251,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-Accordion-itemHeader:focus */
     outline: none;
 }
+:host(:dir(ltr)) #header:focus:after {
+    /* [dir=ltr] .spectrum-Accordion-itemHeader:focus:after */
+    left: 0;
+}
 :host([dir='ltr']) #header:focus:after {
     /* [dir=ltr] .spectrum-Accordion-itemHeader:focus:after */
     left: 0;
+}
+:host(:dir(rtl)) #header:focus:after {
+    /* [dir=rtl] .spectrum-Accordion-itemHeader:focus:after */
+    right: 0;
 }
 :host([dir='rtl']) #header:focus:after {
     /* [dir=rtl] .spectrum-Accordion-itemHeader:focus:after */
@@ -209,17 +299,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     );
     display: none;
 }
+:host(:dir(ltr)[open]) > #heading > #indicator {
+    /* [dir=ltr] .spectrum-Accordion-item.is-open>.spectrum-Accordion-itemHeading>.spectrum-Accordion-itemIndicator */
+    transform: rotate(90deg);
+}
 :host([dir='ltr'][open]) > #heading > #indicator {
     /* [dir=ltr] .spectrum-Accordion-item.is-open>.spectrum-Accordion-itemHeading>.spectrum-Accordion-itemIndicator */
     transform: rotate(90deg);
+}
+:host(:dir(rtl)[open]) > #heading > #indicator {
+    /* [dir=rtl] .spectrum-Accordion-item.is-open>.spectrum-Accordion-itemHeading>.spectrum-Accordion-itemIndicator */
+    transform: matrix(-1, 0, 0, 1, 0, 0) rotate(90deg);
 }
 :host([dir='rtl'][open]) > #heading > #indicator {
     /* [dir=rtl] .spectrum-Accordion-item.is-open>.spectrum-Accordion-itemHeading>.spectrum-Accordion-itemIndicator */
     transform: matrix(-1, 0, 0, 1, 0, 0) rotate(90deg);
 }
+:host(:dir(ltr)[open]) > #indicator {
+    /* [dir=ltr] .spectrum-Accordion-item.is-open>.spectrum-Accordion-itemIndicator */
+    transform: rotate(90deg);
+}
 :host([dir='ltr'][open]) > #indicator {
     /* [dir=ltr] .spectrum-Accordion-item.is-open>.spectrum-Accordion-itemIndicator */
     transform: rotate(90deg);
+}
+:host(:dir(rtl)[open]) > #indicator {
+    /* [dir=rtl] .spectrum-Accordion-item.is-open>.spectrum-Accordion-itemIndicator */
+    transform: matrix(-1, 0, 0, 1, 0, 0) rotate(90deg);
 }
 :host([dir='rtl'][open]) > #indicator {
     /* [dir=rtl] .spectrum-Accordion-item.is-open>.spectrum-Accordion-itemIndicator */

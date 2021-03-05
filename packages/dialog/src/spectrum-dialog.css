@@ -100,9 +100,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     grid-template-areas: 'hero hero    hero    hero        hero        hero' '.    .       .       .           .           .' '.    heading header  header      typeIcon    .' '.    divider divider divider     divider     .' '.    content content content     content     .' '.    footer  footer  buttonGroup buttonGroup .' '.    .       .       .           .           .';
     width: 100%;
 }
+:host(:dir(ltr)) ::slotted([slot='heading']) {
+    /* [dir=ltr] .spectrum-Dialog-heading */
+    padding-right: var(--spectrum-dialog-confirm-gap-size);
+}
 :host([dir='ltr']) ::slotted([slot='heading']) {
     /* [dir=ltr] .spectrum-Dialog-heading */
     padding-right: var(--spectrum-dialog-confirm-gap-size);
+}
+:host(:dir(rtl)) ::slotted([slot='heading']) {
+    /* [dir=rtl] .spectrum-Dialog-heading */
+    padding-left: var(--spectrum-dialog-confirm-gap-size);
 }
 :host([dir='rtl']) ::slotted([slot='heading']) {
     /* [dir=rtl] .spectrum-Dialog-heading */
@@ -123,9 +131,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     );
     outline: none;
 }
+:host(:dir(ltr)) .no-header::slotted([slot='heading']) {
+    /* [dir=ltr] .spectrum-Dialog-heading.spectrum-Dialog-heading--noHeader */
+    padding-right: 0;
+}
 :host([dir='ltr']) .no-header::slotted([slot='heading']) {
     /* [dir=ltr] .spectrum-Dialog-heading.spectrum-Dialog-heading--noHeader */
     padding-right: 0;
+}
+:host(:dir(rtl)) .no-header::slotted([slot='heading']) {
+    /* [dir=rtl] .spectrum-Dialog-heading.spectrum-Dialog-heading--noHeader */
+    padding-left: 0;
 }
 :host([dir='rtl']) .no-header::slotted([slot='heading']) {
     /* [dir=rtl] .spectrum-Dialog-heading.spectrum-Dialog-heading--noHeader */
@@ -211,9 +227,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
    * .spectrum-Dialog-footer>.spectrum-Button+.spectrum-Button */
     margin-bottom: 0;
 }
+:host(:dir(ltr)) .buttonGroup {
+    /* [dir=ltr] .spectrum-Dialog-buttonGroup */
+    padding-left: var(--spectrum-dialog-confirm-gap-size);
+}
 :host([dir='ltr']) .buttonGroup {
     /* [dir=ltr] .spectrum-Dialog-buttonGroup */
     padding-left: var(--spectrum-dialog-confirm-gap-size);
+}
+:host(:dir(rtl)) .buttonGroup {
+    /* [dir=rtl] .spectrum-Dialog-buttonGroup */
+    padding-right: var(--spectrum-dialog-confirm-gap-size);
 }
 :host([dir='rtl']) .buttonGroup {
     /* [dir=rtl] .spectrum-Dialog-buttonGroup */
@@ -248,9 +272,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-Dialog.spectrum-Dialog--dismissable .spectrum-Dialog-grid .spectrum-Dialog-footer */
     grid-area: footer/footer/buttonGroup/buttonGroup;
 }
+:host(:dir(ltr)) .close-button {
+    /* [dir=ltr] .spectrum-Dialog-closeButton */
+    margin-right: var(--spectrum-dialog-confirm-close-button-padding);
+}
 :host([dir='ltr']) .close-button {
     /* [dir=ltr] .spectrum-Dialog-closeButton */
     margin-right: var(--spectrum-dialog-confirm-close-button-padding);
+}
+:host(:dir(rtl)) .close-button {
+    /* [dir=rtl] .spectrum-Dialog-closeButton */
+    margin-left: var(--spectrum-dialog-confirm-close-button-padding);
 }
 :host([dir='rtl']) .close-button {
     /* [dir=rtl] .spectrum-Dialog-closeButton */

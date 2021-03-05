@@ -52,9 +52,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     );
     --spectrum-switch-label-line-height: 1.49;
 }
+:host(:dir(ltr)) {
+    /* [dir=ltr] .spectrum-Switch */
+    margin-right: calc(var(--spectrum-switch-cursor-hit-x) * 2);
+}
 :host([dir='ltr']) {
     /* [dir=ltr] .spectrum-Switch */
     margin-right: calc(var(--spectrum-switch-cursor-hit-x) * 2);
+}
+:host(:dir(rtl)) {
+    /* [dir=rtl] .spectrum-Switch */
+    margin-left: calc(var(--spectrum-switch-cursor-hit-x) * 2);
 }
 :host([dir='rtl']) {
     /* [dir=rtl] .spectrum-Switch */
@@ -69,9 +77,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     max-width: 100%;
     vertical-align: top;
 }
+:host(:dir(ltr)) #input {
+    /* [dir=ltr] .spectrum-Switch-input */
+    left: 0;
+}
 :host([dir='ltr']) #input {
     /* [dir=ltr] .spectrum-Switch-input */
     left: 0;
+}
+:host(:dir(rtl)) #input {
+    /* [dir=rtl] .spectrum-Switch-input */
+    right: 0;
 }
 :host([dir='rtl']) #input {
     /* [dir=rtl] .spectrum-Switch-input */
@@ -90,9 +106,19 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     z-index: 1;
     cursor: pointer;
 }
+:host(:dir(ltr)[checked]) #input + #switch:before {
+    /* [dir=ltr] .spectrum-Switch-input:checked+.spectrum-Switch-switch:before */
+    transform: translateX(calc(var(--spectrum-switch-track-width) - 100%));
+}
 :host([dir='ltr'][checked]) #input + #switch:before {
     /* [dir=ltr] .spectrum-Switch-input:checked+.spectrum-Switch-switch:before */
     transform: translateX(calc(var(--spectrum-switch-track-width) - 100%));
+}
+:host(:dir(rtl)[checked]) #input + #switch:before {
+    /* [dir=rtl] .spectrum-Switch-input:checked+.spectrum-Switch-switch:before */
+    transform: translateX(
+        calc(-1 * (var(--spectrum-switch-track-width) - 100%))
+    );
 }
 :host([dir='rtl'][checked]) #input + #switch:before {
     /* [dir=rtl] .spectrum-Switch-input:checked+.spectrum-Switch-switch:before */
@@ -126,17 +152,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     transition: color var(--spectrum-global-animation-duration-200, 0.16s)
         ease-in-out;
 }
+:host(:dir(ltr)) #switch {
+    /* [dir=ltr] .spectrum-Switch-switch */
+    left: 0;
+}
 :host([dir='ltr']) #switch {
     /* [dir=ltr] .spectrum-Switch-switch */
     left: 0;
+}
+:host(:dir(rtl)) #switch {
+    /* [dir=rtl] .spectrum-Switch-switch */
+    right: 0;
 }
 :host([dir='rtl']) #switch {
     /* [dir=rtl] .spectrum-Switch-switch */
     right: 0;
 }
+:host(:dir(ltr)) #switch {
+    /* [dir=ltr] .spectrum-Switch-switch */
+    right: 0;
+}
 :host([dir='ltr']) #switch {
     /* [dir=ltr] .spectrum-Switch-switch */
     right: 0;
+}
+:host(:dir(rtl)) #switch {
+    /* [dir=rtl] .spectrum-Switch-switch */
+    left: 0;
 }
 :host([dir='rtl']) #switch {
     /* [dir=rtl] .spectrum-Switch-switch */
@@ -174,9 +216,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     content: '';
     box-sizing: border-box;
 }
+:host(:dir(ltr)) #switch:before {
+    /* [dir=ltr] .spectrum-Switch-switch:before */
+    left: 0;
+}
 :host([dir='ltr']) #switch:before {
     /* [dir=ltr] .spectrum-Switch-switch:before */
     left: 0;
+}
+:host(:dir(rtl)) #switch:before {
+    /* [dir=rtl] .spectrum-Switch-switch:before */
+    right: 0;
 }
 :host([dir='rtl']) #switch:before {
     /* [dir=rtl] .spectrum-Switch-switch:before */
@@ -198,17 +248,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     border-radius: var(--spectrum-switch-handle-border-radius);
     border-style: solid;
 }
+:host(:dir(ltr)) #switch:after {
+    /* [dir=ltr] .spectrum-Switch-switch:after */
+    left: 0;
+}
 :host([dir='ltr']) #switch:after {
     /* [dir=ltr] .spectrum-Switch-switch:after */
     left: 0;
+}
+:host(:dir(rtl)) #switch:after {
+    /* [dir=rtl] .spectrum-Switch-switch:after */
+    right: 0;
 }
 :host([dir='rtl']) #switch:after {
     /* [dir=rtl] .spectrum-Switch-switch:after */
     right: 0;
 }
+:host(:dir(ltr)) #switch:after {
+    /* [dir=ltr] .spectrum-Switch-switch:after */
+    right: 0;
+}
 :host([dir='ltr']) #switch:after {
     /* [dir=ltr] .spectrum-Switch-switch:after */
     right: 0;
+}
+:host(:dir(rtl)) #switch:after {
+    /* [dir=rtl] .spectrum-Switch-switch:after */
+    left: 0;
 }
 :host([dir='rtl']) #switch:after {
     /* [dir=rtl] .spectrum-Switch-switch:after */
@@ -350,21 +416,21 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-alias-text-color-disabled)
     );
 }
-:host([disabled][checked][dir]) #input + #switch {
+:host([disabled][checked]) #input + #switch {
     /* .spectrum-Switch .spectrum-Switch-input:disabled:checked+.spectrum-Switch-switch */
     background-color: var(
         --spectrum-switch-m-track-color-selected-disabled,
         var(--spectrum-global-color-gray-400)
     );
 }
-:host([disabled][checked][dir]) #input + #switch:before {
+:host([disabled][checked]) #input + #switch:before {
     /* .spectrum-Switch .spectrum-Switch-input:disabled:checked+.spectrum-Switch-switch:before */
     border-color: var(
         --spectrum-switch-m-handle-border-color-selected-disabled,
         var(--spectrum-global-color-gray-400)
     );
 }
-:host([disabled][checked][dir]) #input ~ #label {
+:host([disabled][checked]) #input ~ #label {
     /* .spectrum-Switch .spectrum-Switch-input:disabled:checked~.spectrum-Switch-label */
     color: var(
         --spectrum-switch-m-text-color-selected-disabled,

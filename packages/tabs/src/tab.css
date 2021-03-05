@@ -58,7 +58,7 @@ governing permissions and limitations under the License.
     flex-shrink: 0;
 }
 
-:host([dir][vertical]) slot[name='icon'] + #itemLabel {
+:host([vertical]) slot[name='icon'] + #itemLabel {
     font-size: var(
         --spectrum-tabs-text-size,
         var(--spectrum-alias-font-size-default)

@@ -64,17 +64,39 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     /* .spectrum-Stepper:before */
     content: '';
 }
+:host(:dir(ltr)) .buttons {
+    /* [dir=ltr] .spectrum-Stepper-buttons */
+    border-top-left-radius: 0;
+}
 :host([dir='ltr']) .buttons {
     /* [dir=ltr] .spectrum-Stepper-buttons */
     border-top-left-radius: 0;
+}
+:host(:dir(rtl)) .buttons {
+    /* [dir=rtl] .spectrum-Stepper-buttons */
+    border-top-right-radius: 0;
 }
 :host([dir='rtl']) .buttons {
     /* [dir=rtl] .spectrum-Stepper-buttons */
     border-top-right-radius: 0;
 }
+:host(:dir(ltr)) .buttons {
+    /* [dir=ltr] .spectrum-Stepper-buttons */
+    border-top-right-radius: var(
+        --spectrum-alias-border-radius-regular,
+        var(--spectrum-global-dimension-size-50)
+    );
+}
 :host([dir='ltr']) .buttons {
     /* [dir=ltr] .spectrum-Stepper-buttons */
     border-top-right-radius: var(
+        --spectrum-alias-border-radius-regular,
+        var(--spectrum-global-dimension-size-50)
+    );
+}
+:host(:dir(rtl)) .buttons {
+    /* [dir=rtl] .spectrum-Stepper-buttons */
+    border-top-left-radius: var(
         --spectrum-alias-border-radius-regular,
         var(--spectrum-global-dimension-size-50)
     );
@@ -86,9 +108,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-global-dimension-size-50)
     );
 }
+:host(:dir(ltr)) .buttons {
+    /* [dir=ltr] .spectrum-Stepper-buttons */
+    border-bottom-right-radius: var(
+        --spectrum-alias-border-radius-regular,
+        var(--spectrum-global-dimension-size-50)
+    );
+}
 :host([dir='ltr']) .buttons {
     /* [dir=ltr] .spectrum-Stepper-buttons */
     border-bottom-right-radius: var(
+        --spectrum-alias-border-radius-regular,
+        var(--spectrum-global-dimension-size-50)
+    );
+}
+:host(:dir(rtl)) .buttons {
+    /* [dir=rtl] .spectrum-Stepper-buttons */
+    border-bottom-left-radius: var(
         --spectrum-alias-border-radius-regular,
         var(--spectrum-global-dimension-size-50)
     );
@@ -100,9 +136,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
         var(--spectrum-global-dimension-size-50)
     );
 }
+:host(:dir(ltr)) .buttons {
+    /* [dir=ltr] .spectrum-Stepper-buttons */
+    border-bottom-left-radius: 0;
+}
 :host([dir='ltr']) .buttons {
     /* [dir=ltr] .spectrum-Stepper-buttons */
     border-bottom-left-radius: 0;
+}
+:host(:dir(rtl)) .buttons {
+    /* [dir=rtl] .spectrum-Stepper-buttons */
+    border-bottom-right-radius: 0;
 }
 :host([dir='rtl']) .buttons {
     /* [dir=rtl] .spectrum-Stepper-buttons */
@@ -114,16 +158,34 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     transition: box-shadow var(--spectrum-global-animation-duration-100, 0.13s)
         ease-in-out;
 }
+:host(:dir(ltr)) .stepDown,
+:host(:dir(ltr)) .stepUp {
+    /* [dir=ltr] .spectrum-Stepper-stepDown,
+   * [dir=ltr] .spectrum-Stepper-stepUp */
+    padding-left: var(--spectrum-stepper-button-padding);
+}
 :host([dir='ltr']) .stepDown,
 :host([dir='ltr']) .stepUp {
     /* [dir=ltr] .spectrum-Stepper-stepDown,
    * [dir=ltr] .spectrum-Stepper-stepUp */
     padding-left: var(--spectrum-stepper-button-padding);
 }
+:host(:dir(rtl)) .stepDown,
+:host(:dir(rtl)) .stepUp {
+    /* [dir=rtl] .spectrum-Stepper-stepDown,
+   * [dir=rtl] .spectrum-Stepper-stepUp */
+    padding-right: var(--spectrum-stepper-button-padding);
+}
 :host([dir='rtl']) .stepDown,
 :host([dir='rtl']) .stepUp {
     /* [dir=rtl] .spectrum-Stepper-stepDown,
    * [dir=rtl] .spectrum-Stepper-stepUp */
+    padding-right: var(--spectrum-stepper-button-padding);
+}
+:host(:dir(ltr)) .stepDown,
+:host(:dir(ltr)) .stepUp {
+    /* [dir=ltr] .spectrum-Stepper-stepDown,
+   * [dir=ltr] .spectrum-Stepper-stepUp */
     padding-right: var(--spectrum-stepper-button-padding);
 }
 :host([dir='ltr']) .stepDown,
@@ -132,11 +194,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
    * [dir=ltr] .spectrum-Stepper-stepUp */
     padding-right: var(--spectrum-stepper-button-padding);
 }
+:host(:dir(rtl)) .stepDown,
+:host(:dir(rtl)) .stepUp {
+    /* [dir=rtl] .spectrum-Stepper-stepDown,
+   * [dir=rtl] .spectrum-Stepper-stepUp */
+    padding-left: var(--spectrum-stepper-button-padding);
+}
 :host([dir='rtl']) .stepDown,
 :host([dir='rtl']) .stepUp {
     /* [dir=rtl] .spectrum-Stepper-stepDown,
    * [dir=rtl] .spectrum-Stepper-stepUp */
     padding-left: var(--spectrum-stepper-button-padding);
+}
+:host(:dir(ltr)) .stepDown,
+:host(:dir(ltr)) .stepUp {
+    /* [dir=ltr] .spectrum-Stepper-stepDown,
+   * [dir=ltr] .spectrum-Stepper-stepUp */
+    border-left-width: var(--spectrum-stepper-border-size-reset);
 }
 :host([dir='ltr']) .stepDown,
 :host([dir='ltr']) .stepUp {
@@ -144,11 +218,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
    * [dir=ltr] .spectrum-Stepper-stepUp */
     border-left-width: var(--spectrum-stepper-border-size-reset);
 }
+:host(:dir(rtl)) .stepDown,
+:host(:dir(rtl)) .stepUp {
+    /* [dir=rtl] .spectrum-Stepper-stepDown,
+   * [dir=rtl] .spectrum-Stepper-stepUp */
+    border-right-width: var(--spectrum-stepper-border-size-reset);
+}
 :host([dir='rtl']) .stepDown,
 :host([dir='rtl']) .stepUp {
     /* [dir=rtl] .spectrum-Stepper-stepDown,
    * [dir=rtl] .spectrum-Stepper-stepUp */
     border-right-width: var(--spectrum-stepper-border-size-reset);
+}
+:host(:dir(ltr)) .stepDown,
+:host(:dir(ltr)) .stepUp {
+    /* [dir=ltr] .spectrum-Stepper-stepDown,
+   * [dir=ltr] .spectrum-Stepper-stepUp */
+    border-top-left-radius: var(--spectrum-stepper-border-radius-reset);
 }
 :host([dir='ltr']) .stepDown,
 :host([dir='ltr']) .stepUp {
@@ -156,17 +242,35 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
    * [dir=ltr] .spectrum-Stepper-stepUp */
     border-top-left-radius: var(--spectrum-stepper-border-radius-reset);
 }
+:host(:dir(rtl)) .stepDown,
+:host(:dir(rtl)) .stepUp {
+    /* [dir=rtl] .spectrum-Stepper-stepDown,
+   * [dir=rtl] .spectrum-Stepper-stepUp */
+    border-top-right-radius: var(--spectrum-stepper-border-radius-reset);
+}
 :host([dir='rtl']) .stepDown,
 :host([dir='rtl']) .stepUp {
     /* [dir=rtl] .spectrum-Stepper-stepDown,
    * [dir=rtl] .spectrum-Stepper-stepUp */
     border-top-right-radius: var(--spectrum-stepper-border-radius-reset);
 }
+:host(:dir(ltr)) .stepDown,
+:host(:dir(ltr)) .stepUp {
+    /* [dir=ltr] .spectrum-Stepper-stepDown,
+   * [dir=ltr] .spectrum-Stepper-stepUp */
+    border-bottom-left-radius: var(--spectrum-stepper-border-radius-reset);
+}
 :host([dir='ltr']) .stepDown,
 :host([dir='ltr']) .stepUp {
     /* [dir=ltr] .spectrum-Stepper-stepDown,
    * [dir=ltr] .spectrum-Stepper-stepUp */
     border-bottom-left-radius: var(--spectrum-stepper-border-radius-reset);
+}
+:host(:dir(rtl)) .stepDown,
+:host(:dir(rtl)) .stepUp {
+    /* [dir=rtl] .spectrum-Stepper-stepDown,
+   * [dir=rtl] .spectrum-Stepper-stepUp */
+    border-bottom-right-radius: var(--spectrum-stepper-border-radius-reset);
 }
 :host([dir='rtl']) .stepDown,
 :host([dir='rtl']) .stepUp {
@@ -194,9 +298,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     margin: 0 !important;
     opacity: 1;
 }
+:host(:dir(ltr)) .stepUp {
+    /* [dir=ltr] .spectrum-Stepper-stepUp */
+    border-bottom-right-radius: var(--spectrum-stepper-border-radius-reset);
+}
 :host([dir='ltr']) .stepUp {
     /* [dir=ltr] .spectrum-Stepper-stepUp */
     border-bottom-right-radius: var(--spectrum-stepper-border-radius-reset);
+}
+:host(:dir(rtl)) .stepUp {
+    /* [dir=rtl] .spectrum-Stepper-stepUp */
+    border-bottom-left-radius: var(--spectrum-stepper-border-radius-reset);
 }
 :host([dir='rtl']) .stepUp {
     /* [dir=rtl] .spectrum-Stepper-stepUp */
@@ -207,9 +319,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     border-bottom: none;
     padding-top: var(--spectrum-stepper-icon-nudge-top);
 }
+:host(:dir(ltr)) .stepDown {
+    /* [dir=ltr] .spectrum-Stepper-stepDown */
+    border-top-right-radius: var(--spectrum-stepper-border-radius-reset);
+}
 :host([dir='ltr']) .stepDown {
     /* [dir=ltr] .spectrum-Stepper-stepDown */
     border-top-right-radius: var(--spectrum-stepper-border-radius-reset);
+}
+:host(:dir(rtl)) .stepDown {
+    /* [dir=rtl] .spectrum-Stepper-stepDown */
+    border-top-left-radius: var(--spectrum-stepper-border-radius-reset);
 }
 :host([dir='rtl']) .stepDown {
     /* [dir=rtl] .spectrum-Stepper-stepDown */
@@ -224,17 +344,33 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     flex: 1;
     width: auto;
 }
+:host(:dir(ltr)) .input {
+    /* [dir=ltr] .spectrum-Stepper-input */
+    border-top-right-radius: var(--spectrum-stepper-border-radius-reset);
+}
 :host([dir='ltr']) .input {
     /* [dir=ltr] .spectrum-Stepper-input */
     border-top-right-radius: var(--spectrum-stepper-border-radius-reset);
+}
+:host(:dir(rtl)) .input {
+    /* [dir=rtl] .spectrum-Stepper-input */
+    border-top-left-radius: var(--spectrum-stepper-border-radius-reset);
 }
 :host([dir='rtl']) .input {
     /* [dir=rtl] .spectrum-Stepper-input */
     border-top-left-radius: var(--spectrum-stepper-border-radius-reset);
 }
+:host(:dir(ltr)) .input {
+    /* [dir=ltr] .spectrum-Stepper-input */
+    border-bottom-right-radius: var(--spectrum-stepper-border-radius-reset);
+}
 :host([dir='ltr']) .input {
     /* [dir=ltr] .spectrum-Stepper-input */
     border-bottom-right-radius: var(--spectrum-stepper-border-radius-reset);
+}
+:host(:dir(rtl)) .input {
+    /* [dir=rtl] .spectrum-Stepper-input */
+    border-bottom-left-radius: var(--spectrum-stepper-border-radius-reset);
 }
 :host([dir='rtl']) .input {
     /* [dir=rtl] .spectrum-Stepper-input */
@@ -256,11 +392,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
    * .spectrum-Stepper--quiet .spectrum-Stepper-buttons */
     border-radius: var(--spectrum-stepper-border-radius-reset);
 }
+:host(:dir(ltr)[quiet]) .stepDown,
+:host(:dir(ltr)[quiet]) .stepUp {
+    /* [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown,
+   * [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
+    border-right-width: var(--spectrum-stepper-border-size-reset);
+}
 :host([dir='ltr'][quiet]) .stepDown,
 :host([dir='ltr'][quiet]) .stepUp {
     /* [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown,
    * [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
     border-right-width: var(--spectrum-stepper-border-size-reset);
+}
+:host(:dir(rtl)[quiet]) .stepDown,
+:host(:dir(rtl)[quiet]) .stepUp {
+    /* [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown,
+   * [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
+    border-left-width: var(--spectrum-stepper-border-size-reset);
 }
 :host([dir='rtl'][quiet]) .stepDown,
 :host([dir='rtl'][quiet]) .stepUp {
@@ -268,11 +416,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
    * [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
     border-left-width: var(--spectrum-stepper-border-size-reset);
 }
+:host(:dir(ltr)[quiet]) .stepDown,
+:host(:dir(ltr)[quiet]) .stepUp {
+    /* [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown,
+   * [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
+    border-left: none;
+}
 :host([dir='ltr'][quiet]) .stepDown,
 :host([dir='ltr'][quiet]) .stepUp {
     /* [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown,
    * [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
     border-left: none;
+}
+:host(:dir(rtl)[quiet]) .stepDown,
+:host(:dir(rtl)[quiet]) .stepUp {
+    /* [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown,
+   * [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
+    border-right: none;
 }
 :host([dir='rtl'][quiet]) .stepDown,
 :host([dir='rtl'][quiet]) .stepUp {
@@ -280,11 +440,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
    * [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
     border-right: none;
 }
+:host(:dir(ltr)[quiet]) .stepDown,
+:host(:dir(ltr)[quiet]) .stepUp {
+    /* [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown,
+   * [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
+    padding-right: 0;
+}
 :host([dir='ltr'][quiet]) .stepDown,
 :host([dir='ltr'][quiet]) .stepUp {
     /* [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown,
    * [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
     padding-right: 0;
+}
+:host(:dir(rtl)[quiet]) .stepDown,
+:host(:dir(rtl)[quiet]) .stepUp {
+    /* [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown,
+   * [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp */
+    padding-left: 0;
 }
 :host([dir='rtl'][quiet]) .stepDown,
 :host([dir='rtl'][quiet]) .stepUp {
@@ -302,11 +474,23 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     border-radius: var(--spectrum-stepper-border-radius-reset);
     justify-content: flex-end;
 }
+:host(:dir(ltr)[quiet]) .stepDown:after,
+:host(:dir(ltr)[quiet]) .stepUp:after {
+    /* [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown:after,
+   * [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp:after */
+    right: calc(var(--spectrum-stepper-button-offset) * -1);
+}
 :host([dir='ltr'][quiet]) .stepDown:after,
 :host([dir='ltr'][quiet]) .stepUp:after {
     /* [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown:after,
    * [dir=ltr] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp:after */
     right: calc(var(--spectrum-stepper-button-offset) * -1);
+}
+:host(:dir(rtl)[quiet]) .stepDown:after,
+:host(:dir(rtl)[quiet]) .stepUp:after {
+    /* [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepDown:after,
+   * [dir=rtl] .spectrum-Stepper--quiet .spectrum-Stepper-stepUp:after */
+    left: calc(var(--spectrum-stepper-button-offset) * -1);
 }
 :host([dir='rtl'][quiet]) .stepDown:after,
 :host([dir='rtl'][quiet]) .stepUp:after {

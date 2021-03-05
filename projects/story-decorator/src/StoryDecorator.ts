@@ -18,6 +18,7 @@ import {
     TemplateResult,
     ifDefined,
     nothing,
+    queryAsync,
 } from '@spectrum-web-components/base';
 import '@spectrum-web-components/theme/sp-theme.js';
 import '@spectrum-web-components/theme/src/themes.js';
@@ -28,7 +29,7 @@ import '@spectrum-web-components/menu/sp-menu-item.js';
 import '@spectrum-web-components/switch/sp-switch.js';
 import { Picker } from '@spectrum-web-components/picker';
 import { Switch } from '@spectrum-web-components/switch';
-import { Scale, Color } from '@spectrum-web-components/theme';
+import { Scale, Color, Theme } from '@spectrum-web-components/theme';
 import { ActiveOverlay } from '@spectrum-web-components/overlay';
 import './types.js';
 
@@ -67,7 +68,7 @@ const reduceMotionProperties = css`
 ActiveOverlay.prototype.renderTheme = function (
     content: TemplateResult
 ): TemplateResult {
-    const { color, scale, lang } = this.theme;
+    const { color, scale, lang, dir } = this.theme;
     return html`
         ${window.__swc_hack_knobs__.defaultReduceMotion
             ? html`
@@ -82,6 +83,7 @@ ActiveOverlay.prototype.renderTheme = function (
             color=${ifDefined(color)}
             scale=${ifDefined(scale)}
             lang=${ifDefined(lang)}
+            dir=${ifDefined(dir)}
             part="theme"
         >
             ${content}
@@ -174,7 +176,18 @@ export class StoryDecorator extends SpectrumElement {
     @property({ type: Boolean, reflect: true })
     public screenshot = false;
 
+    @queryAsync('sp-theme')
+    private theme!: Theme;
+
     public ready = false;
+
+    public async startManagingContentDirection(el: HTMLElement): Promise<void> {
+        (await this.theme).startManagingContentDirection(el);
+    }
+
+    public async stopManagingContentDirection(el: HTMLElement): Promise<void> {
+        (await this.theme).stopManagingContentDirection(el);
+    }
 
     private updateTheme({ target }: Event & { target: Picker | Switch }): void {
         const { id } = target;

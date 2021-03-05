@@ -25,9 +25,17 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     display: inline-block;
     position: relative;
 }
+:host(:dir(ltr)) #button {
+    /* [dir=ltr] .spectrum-Search-clearButton */
+    right: 0;
+}
 :host([dir='ltr']) #button {
     /* [dir=ltr] .spectrum-Search-clearButton */
     right: 0;
+}
+:host(:dir(rtl)) #button {
+    /* [dir=rtl] .spectrum-Search-clearButton */
+    left: 0;
 }
 :host([dir='rtl']) #button {
     /* [dir=rtl] .spectrum-Search-clearButton */

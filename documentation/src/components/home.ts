@@ -58,9 +58,7 @@ class HomeElement extends RouteComponent {
                     <p class="spectrum-Body spectrum-Body--sizeM">
                         <sp-link
                             href="https://developer.mozilla.org/en-US/docs/Web/Web_Components"
-                        >
-                            Web Components
-                        </sp-link>
+                        >Web Components</sp-link>
                         are a set of technologies that work together, letting
                         you create custom elements that work just like the
                         standard HTML elements built into your browser.
@@ -74,9 +72,7 @@ class HomeElement extends RouteComponent {
                         Spectrum Web Components are implemented using the
                         <sp-link
                             href="https://lit-element.polymer-project.org/"
-                        >
-                            LitElement
-                        </sp-link>
+                        >LitElement</sp-link>
                         base class. LitElement is designed for creating web
                         components with a minimum amount of overhead.
                     </p>
