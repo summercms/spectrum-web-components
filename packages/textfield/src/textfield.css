@@ -64,3 +64,7 @@ governing permissions and limitations under the License.
 .icon-workflow {
     pointer-events: none;
 }
+
+.input {
+    border-width: var(--swc-textfield-border-width);
+}

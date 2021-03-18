@@ -1,0 +1,435 @@
+/* stylelint-disable */ /* 
+Copyright 2020 Adobe. All rights reserved.
+This file is licensed to you under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License. You may obtain a copy
+of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under
+the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+OF ANY KIND, either express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+
+THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
+:host {
+    /* .spectrum-InputGroup */
+    --spectrum-combobox-quiet-fieldbutton-border-radius: 0;
+    --spectrum-combobox-field-border-width-right: 0;
+    --spectrum-inputgroup-generic-padding: var(
+        --spectrum-global-dimension-size-150
+    );
+    --spectrum-datepicker-range-input-width-first: calc(
+        var(--spectrum-global-dimension-size-1600) - 2 *
+            var(--spectrum-inputgroup-generic-padding)
+    );
+    --spectrum-datepicker-input-width: calc(
+        var(--spectrum-datepicker-range-input-width-first) +
+            var(
+                --spectrum-icon-alert-medium-width,
+                var(--spectrum-global-dimension-size-225)
+            )
+    );
+    --spectrum-datepicker-range-input-width-quiet-first: calc(
+        var(--spectrum-global-dimension-size-900) +
+            var(--spectrum-global-dimension-size-200)
+    );
+    --spectrum-datepicker-input-width-quiet: calc(
+        var(--spectrum-datepicker-range-input-width-quiet-first) +
+            var(
+                --spectrum-icon-alert-medium-width,
+                var(--spectrum-global-dimension-size-225)
+            )
+    );
+    --spectrum-datepicker-datetime-input-width-first: calc(
+        var(--spectrum-datepicker-input-width) +
+            var(--spectrum-global-dimension-size-450)
+    );
+    --spectrum-datepicker-datetime-input-width: calc(
+        var(--spectrum-datepicker-datetime-input-width-first) +
+            var(
+                --spectrum-icon-alert-medium-width,
+                var(--spectrum-global-dimension-size-225)
+            )
+    );
+    --spectrum-datepicker-datetime-quiet-input-width-first: calc(
+        var(--spectrum-datepicker-input-width) +
+            var(--spectrum-global-dimension-size-300)
+    );
+    --spectrum-datepicker-datetime-quiet-input-width: calc(
+        var(--spectrum-datepicker-datetime-quiet-input-width-first) +
+            var(
+                --spectrum-icon-alert-medium-width,
+                var(--spectrum-global-dimension-size-225)
+            )
+    );
+    --spectrum-datepicker-range-dash-margin-left: calc(
+        -0.5 * var(--spectrum-global-dimension-static-font-size-100, 14px)
+    );
+    --spectrum-datepicker-range-dash-padding-top: 0;
+    --spectrum-datepicker-range-dash-line-height: calc(
+        var(--spectrum-textfield-m-height, var(--spectrum-alias-item-height-m)) -
+            var(--spectrum-global-dimension-size-100)
+    );
+    --spectrum-combobox-button-width: var(--spectrum-global-dimension-size-400);
+    --spectrum-combobox-quiet-button-offset: calc(
+        var(
+                --spectrum-actionbutton-m-min-width,
+                var(--spectrum-global-dimension-size-400)
+            ) / 2 - var(--spectrum-icon-chevron-down-medium-width) / 2
+    );
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    min-width: var(
+        --spectrum-alias-single-line-width,
+        var(--spectrum-global-dimension-size-2400)
+    );
+    border-radius: var(
+        --spectrum-alias-border-radius-regular,
+        var(--spectrum-global-dimension-size-50)
+    );
+}
+:host([dir='ltr']) .button {
+    /* [dir=ltr] .spectrum-InputGroup .spectrum-InputGroup-button */
+    border-top-left-radius: var(
+        --spectrum-combobox-fieldbutton-border-top-left-radius,
+        0
+    );
+}
+:host([dir='rtl']) .button {
+    /* [dir=rtl] .spectrum-InputGroup .spectrum-InputGroup-button */
+    border-top-right-radius: var(
+        --spectrum-combobox-fieldbutton-border-top-left-radius,
+        0
+    );
+}
+:host([dir='ltr']) .button {
+    /* [dir=ltr] .spectrum-InputGroup .spectrum-InputGroup-button */
+    border-bottom-left-radius: var(
+        --spectrum-combobox-fieldbutton-border-bottom-left-radius,
+        0
+    );
+}
+:host([dir='rtl']) .button {
+    /* [dir=rtl] .spectrum-InputGroup .spectrum-InputGroup-button */
+    border-bottom-right-radius: var(
+        --spectrum-combobox-fieldbutton-border-bottom-left-radius,
+        0
+    );
+}
+.button {
+    /* .spectrum-InputGroup .spectrum-InputGroup-button */
+    padding: 0;
+    width: var(--spectrum-combobox-button-width);
+}
+#input {
+    /* .spectrum-InputGroup .spectrum-InputGroup-input */
+    width: auto;
+}
+.button {
+    /* .spectrum-InputGroup-button */
+    position: relative;
+}
+:host([dir='ltr']) #input {
+    /* [dir=ltr] .spectrum-InputGroup-input */
+    border-top-right-radius: var(
+        --spectrum-combobox-textfield-border-top-right-radius,
+        0
+    );
+}
+:host([dir='rtl']) #input {
+    /* [dir=rtl] .spectrum-InputGroup-input */
+    border-top-left-radius: var(
+        --spectrum-combobox-textfield-border-top-right-radius,
+        0
+    );
+}
+:host([dir='ltr']) #input {
+    /* [dir=ltr] .spectrum-InputGroup-input */
+    border-bottom-right-radius: var(
+        --spectrum-combobox-textfield-border-bottom-right-radius,
+        0
+    );
+}
+:host([dir='rtl']) #input {
+    /* [dir=rtl] .spectrum-InputGroup-input */
+    border-bottom-left-radius: var(
+        --spectrum-combobox-textfield-border-bottom-right-radius,
+        0
+    );
+}
+:host([dir='ltr']) #input {
+    /* [dir=ltr] .spectrum-InputGroup-input */
+    border-right-width: var(--spectrum-combobox-field-border-width-right);
+}
+:host([dir='rtl']) #input {
+    /* [dir=rtl] .spectrum-InputGroup-input */
+    border-left-width: var(--spectrum-combobox-field-border-width-right);
+}
+#input {
+    /* .spectrum-InputGroup-input */
+    flex: 1;
+}
+:host([quiet]) {
+    /* .spectrum-InputGroup--quiet */
+    border-radius: var(--spectrum-combobox-quiet-fieldbutton-border-radius);
+}
+:host([dir='ltr'][quiet]) .button {
+    /* [dir=ltr] .spectrum-InputGroup--quiet .spectrum-InputGroup-button */
+    padding-left: var(--spectrum-combobox-quiet-button-offset);
+}
+:host([dir='rtl'][quiet]) .button {
+    /* [dir=rtl] .spectrum-InputGroup--quiet .spectrum-InputGroup-button */
+    padding-right: var(--spectrum-combobox-quiet-button-offset);
+}
+:host([dir='ltr'][quiet]) .button {
+    /* [dir=ltr] .spectrum-InputGroup--quiet .spectrum-InputGroup-button */
+    padding-right: var(--spectrum-combobox-quiet-fieldbutton-padding-right);
+}
+:host([dir='rtl'][quiet]) .button {
+    /* [dir=rtl] .spectrum-InputGroup--quiet .spectrum-InputGroup-button */
+    padding-left: var(--spectrum-combobox-quiet-fieldbutton-padding-right);
+}
+:host([dir='ltr'][quiet]) .button {
+    /* [dir=ltr] .spectrum-InputGroup--quiet .spectrum-InputGroup-button */
+    border-left: 0;
+}
+:host([dir='rtl'][quiet]) .button {
+    /* [dir=rtl] .spectrum-InputGroup--quiet .spectrum-InputGroup-button */
+    border-right: 0;
+}
+:host([dir='ltr'][quiet]) .button {
+    /* [dir=ltr] .spectrum-InputGroup--quiet .spectrum-InputGroup-button */
+    border-right: 0;
+}
+:host([dir='rtl'][quiet]) .button {
+    /* [dir=rtl] .spectrum-InputGroup--quiet .spectrum-InputGroup-button */
+    border-left: 0;
+}
+:host([quiet]) .button {
+    /* .spectrum-InputGroup--quiet .spectrum-InputGroup-button */
+    width: auto;
+    position: relative;
+    border-top: 0;
+    border-bottom: var(
+            --spectrum-textfield-quiet-m-border-size,
+            var(--spectrum-alias-border-size-thin)
+        )
+        solid;
+    border-radius: var(--spectrum-combobox-quiet-fieldbutton-border-radius);
+}
+:host([dir='ltr'][quiet]) .button:after {
+    /* [dir=ltr] .spectrum-InputGroup--quiet .spectrum-InputGroup-button:after */
+    right: calc(var(--spectrum-combobox-quiet-button-offset) * -1);
+}
+:host([dir='rtl'][quiet]) .button:after {
+    /* [dir=rtl] .spectrum-InputGroup--quiet .spectrum-InputGroup-button:after */
+    left: calc(var(--spectrum-combobox-quiet-button-offset) * -1);
+}
+:host([quiet]) .button:after {
+    /* .spectrum-InputGroup--quiet .spectrum-InputGroup-button:after */
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: var(--spectrum-combobox-quiet-button-offset);
+}
+:host([dir='ltr'][quiet]) .icon {
+    /* [dir=ltr] .spectrum-InputGroup--quiet .spectrum-InputGroup-icon */
+    right: 0;
+}
+:host([dir='rtl'][quiet]) .icon {
+    /* [dir=rtl] .spectrum-InputGroup--quiet .spectrum-InputGroup-icon */
+    left: 0;
+}
+:host([focused]:not([invalid])) .spectrum-InputGroup-textfield #input {
+    /* .spectrum-InputGroup.is-focused:not(.is-invalid) .spectrum-InputGroup-textfield .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-textfield-m-border-color-key-focus,
+        var(--spectrum-alias-border-color-focus)
+    );
+}
+:host([focused]:not([invalid])) .button {
+    /* .spectrum-InputGroup.is-focused:not(.is-invalid) .spectrum-InputGroup-button */
+    border-color: var(
+        --spectrum-textfield-m-border-color-key-focus,
+        var(--spectrum-alias-border-color-focus)
+    );
+}
+:host(:hover:not([focused]):not([keyboard-focused]):not([disabled]))
+    .spectrum-InputGroup-textfield
+    #input {
+    /* .spectrum-InputGroup:hover:not(.is-focused):not(.is-keyboardFocused):not(.is-disabled) .spectrum-InputGroup-textfield .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-textfield-m-border-color-hover,
+        var(--spectrum-alias-border-color-hover)
+    );
+}
+:host(:hover:not([focused]):not([keyboard-focused]):not([disabled])) .button {
+    /* .spectrum-InputGroup:hover:not(.is-focused):not(.is-keyboardFocused):not(.is-disabled) .spectrum-InputGroup-button */
+    border-color: var(
+        --spectrum-textfield-m-border-color-hover,
+        var(--spectrum-alias-border-color-hover)
+    );
+}
+:host(:hover:not([focused]):not([keyboard-focused]):not([disabled])[invalid])
+    .spectrum-InputGroup-textfield
+    #input {
+    /* .spectrum-InputGroup:hover:not(.is-focused):not(.is-keyboardFocused):not(.is-disabled).is-invalid .spectrum-InputGroup-textfield .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-textfield-m-border-color-error-hover,
+        var(--spectrum-semantic-negative-color-state-hover)
+    );
+}
+:host(:hover:not([focused]):not([keyboard-focused]):not([disabled])[invalid])
+    .button {
+    /* .spectrum-InputGroup:hover:not(.is-focused):not(.is-keyboardFocused):not(.is-disabled).is-invalid .spectrum-InputGroup-button */
+    border-color: var(
+        --spectrum-textfield-m-border-color-error-hover,
+        var(--spectrum-semantic-negative-color-state-hover)
+    );
+}
+:host([focused]) .button,
+:host([focused]) #input {
+    /* .spectrum-InputGroup.is-focused .spectrum-InputGroup-button,
+   * .spectrum-InputGroup.is-focused .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-picker-m-border-color-key-focus,
+        var(--spectrum-alias-border-color-focus)
+    );
+}
+:host([focused][invalid]) .button,
+:host([focused][invalid]) #input {
+    /* .spectrum-InputGroup.is-focused.is-invalid .spectrum-InputGroup-button,
+   * .spectrum-InputGroup.is-focused.is-invalid .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-picker-m-border-color-error,
+        var(--spectrum-global-color-red-500)
+    );
+}
+:host(:not([quiet])[keyboard-focused]) {
+    /* .spectrum-InputGroup:not(.spectrum-InputGroup--quiet).is-keyboardFocused */
+    box-shadow: 0 0 0 1px
+        var(
+            --spectrum-picker-m-border-color-key-focus,
+            var(--spectrum-alias-border-color-focus)
+        );
+}
+:host(:not([quiet])[keyboard-focused]) #input,
+:host(:not([quiet])[keyboard-focused]) #input:focus-visible {
+    /* .spectrum-InputGroup:not(.spectrum-InputGroup--quiet).is-keyboardFocused .spectrum-InputGroup-input,
+   * .spectrum-InputGroup:not(.spectrum-InputGroup--quiet).is-keyboardFocused .spectrum-InputGroup-input.focus-ring */
+    box-shadow: none;
+}
+:host(:not([quiet])[keyboard-focused][invalid]) {
+    /* .spectrum-InputGroup:not(.spectrum-InputGroup--quiet).is-keyboardFocused.is-invalid */
+    box-shadow: 0 0 0 1px
+        var(
+            --spectrum-picker-m-border-color-error-key-focus,
+            var(--spectrum-alias-border-color-focus)
+        );
+}
+:host(:not([quiet])[keyboard-focused][invalid]) .button,
+:host(:not([quiet])[keyboard-focused][invalid]) #input {
+    /* .spectrum-InputGroup:not(.spectrum-InputGroup--quiet).is-keyboardFocused.is-invalid .spectrum-InputGroup-button,
+   * .spectrum-InputGroup:not(.spectrum-InputGroup--quiet).is-keyboardFocused.is-invalid .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-picker-m-border-color-error-key-focus,
+        var(--spectrum-alias-border-color-focus)
+    );
+}
+:host(:not([quiet])[keyboard-focused]) .button {
+    /* .spectrum-InputGroup:not(.spectrum-InputGroup--quiet).is-keyboardFocused .spectrum-InputGroup-button */
+    box-shadow: none;
+}
+:host([quiet]) .button,
+:host([quiet][invalid]) .button,
+:host([quiet]) .button.is-selected,
+:host([quiet]) .button:active,
+:host([quiet]) .button:focus,
+:host([quiet]) .button:hover {
+    /* .spectrum-InputGroup--quiet .spectrum-InputGroup-button,
+   * .spectrum-InputGroup--quiet .spectrum-InputGroup-button.is-invalid,
+   * .spectrum-InputGroup--quiet .spectrum-InputGroup-button.is-selected,
+   * .spectrum-InputGroup--quiet .spectrum-InputGroup-button:active,
+   * .spectrum-InputGroup--quiet .spectrum-InputGroup-button:focus,
+   * .spectrum-InputGroup--quiet .spectrum-InputGroup-button:hover */
+    border-color: var(
+        --spectrum-textfield-quiet-m-border-color,
+        var(--spectrum-alias-border-color)
+    );
+}
+:host([quiet]) .button:disabled,
+:host([quiet]) .button:disabled:hover {
+    /* .spectrum-InputGroup--quiet .spectrum-InputGroup-button:disabled,
+   * .spectrum-InputGroup--quiet .spectrum-InputGroup-button:disabled:hover */
+    border-color: var(
+        --spectrum-textfield-quiet-m-border-color-disabled,
+        var(--spectrum-alias-border-color-mid)
+    );
+}
+:host([quiet]:hover:not([focused]):not([keyboard-focused]):not([disabled]))
+    .button,
+:host([quiet]:hover:not([focused]):not([keyboard-focused]):not([disabled]))
+    #input {
+    /* .spectrum-InputGroup--quiet:hover:not(.is-focused):not(.is-keyboardFocused):not(.is-disabled) .spectrum-InputGroup-button,
+   * .spectrum-InputGroup--quiet:hover:not(.is-focused):not(.is-keyboardFocused):not(.is-disabled) .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-textfield-quiet-m-border-color-hover,
+        var(--spectrum-alias-border-color-hover)
+    );
+}
+:host([quiet][invalid]) .button,
+:host([quiet][invalid]) #input {
+    /* .spectrum-InputGroup--quiet.is-invalid .spectrum-InputGroup-button,
+   * .spectrum-InputGroup--quiet.is-invalid .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-textfield-quiet-m-border-color-error,
+        var(--spectrum-semantic-negative-color-default)
+    );
+}
+:host([quiet][focused]) .button,
+:host([quiet][focused]) #input {
+    /* .spectrum-InputGroup--quiet.is-focused .spectrum-InputGroup-button,
+   * .spectrum-InputGroup--quiet.is-focused .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-textfield-quiet-m-border-color-mouse-focus,
+        var(--spectrum-alias-border-color-mouse-focus)
+    );
+}
+:host([quiet][focused][invalid]) .button,
+:host([quiet][focused][invalid]) #input {
+    /* .spectrum-InputGroup--quiet.is-focused.is-invalid .spectrum-InputGroup-button,
+   * .spectrum-InputGroup--quiet.is-focused.is-invalid .spectrum-InputGroup-input */
+    border-color: var(
+        --spectrum-textfield-quiet-m-border-color-error-mouse-focus,
+        var(--spectrum-semantic-negative-color-state-hover)
+    );
+}
+:host([quiet][keyboard-focused]) .button,
+:host([quiet][keyboard-focused]) #input {
+    /* .spectrum-InputGroup--quiet.is-keyboardFocused .spectrum-InputGroup-button,
+   * .spectrum-InputGroup--quiet.is-keyboardFocused .spectrum-InputGroup-input */
+    box-shadow: 0 1px 0
+        var(
+            --spectrum-textfield-quiet-m-border-color-key-focus,
+            var(--spectrum-alias-border-color-focus)
+        );
+    border-color: var(
+        --spectrum-textfield-quiet-m-border-color-key-focus,
+        var(--spectrum-alias-border-color-focus)
+    );
+}
+:host([quiet][keyboard-focused][invalid]) .button,
+:host([quiet][keyboard-focused][invalid]) #input {
+    /* .spectrum-InputGroup--quiet.is-keyboardFocused.is-invalid .spectrum-InputGroup-button,
+   * .spectrum-InputGroup--quiet.is-keyboardFocused.is-invalid .spectrum-InputGroup-input */
+    box-shadow: 0 1px 0
+        var(
+            --spectrum-picker-m-border-color-error-key-focus,
+            var(--spectrum-alias-border-color-focus)
+        );
+    border-color: var(
+        --spectrum-picker-m-border-color-error-key-focus,
+        var(--spectrum-alias-border-color-focus)
+    );
+}
