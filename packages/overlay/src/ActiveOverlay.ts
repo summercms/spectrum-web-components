@@ -309,7 +309,7 @@ export class ActiveOverlay extends SpectrumElement {
 
     private updateOverlayPopperPlacement(): void {
         /* c8 ignore next */
-        if (!this.overlayContent) return;
+        if (!this.overlayContent || this.state !== 'active') return;
 
         if (this.dataPopperPlacement) {
             // Copy this attribute to the actual overlay node so that it can use

@@ -17,11 +17,13 @@ import {
     SpectrumElement,
     property,
     query,
+    PropertyValues,
 } from '@spectrum-web-components/base';
-import {
+import type {
     OverlayDisplayQueryDetail,
     Placement,
 } from '@spectrum-web-components/overlay';
+import { openOverlay } from '@spectrum-web-components/overlay/src/loader.js';
 
 import tooltipStyles from './tooltip.css.js';
 
@@ -41,6 +43,12 @@ export class Tooltip extends SpectrumElement {
     static instanceCount = 0;
 
     private _tooltipId = `sp-tooltip-describedby-helper-${Tooltip.instanceCount++}`;
+
+    @property({ type: Boolean })
+    public auto = false;
+
+    @property({ type: Number, reflect: true })
+    public offset = 6;
 
     @property({ type: Boolean, reflect: true })
     public open = false;
@@ -137,5 +145,76 @@ export class Tooltip extends SpectrumElement {
             this._proxy.remove();
             this._proxy = undefined;
         }
+    }
+
+    private closeOverlayCallback?: () => void;
+
+    private openOverlay = async (): Promise<void> => {
+        const parentElement = this.parentElement as HTMLElement;
+        this.closeOverlayCallback = await openOverlay(
+            parentElement,
+            'hover',
+            this,
+            {
+                offset: this.offset,
+                placement: this.placement,
+            }
+        );
+    };
+
+    private closeOverlay = (): void => {
+        if (this.closeOverlayCallback) {
+            this.closeOverlayCallback();
+            delete this.closeOverlayCallback;
+        }
+    };
+
+    protected async update(changed: PropertyValues<this>): Promise<void> {
+        if (changed.has('open') && this.auto) {
+            if (this.open) {
+                await this.openOverlay();
+            } else {
+                this.closeOverlay();
+            }
+        }
+        super.update(changed);
+    }
+
+    protected updated(changed: PropertyValues<this>): void {
+        super.updated(changed);
+        if (changed.has('auto')) {
+            const parentElement = this.parentElement as HTMLElement;
+            if (this.auto) {
+                parentElement.addEventListener(
+                    'pointerenter',
+                    this.openOverlay
+                );
+                parentElement.addEventListener('focusin', this.openOverlay);
+                parentElement.addEventListener(
+                    'pointerleave',
+                    this.closeOverlay
+                );
+                parentElement.addEventListener('focusout', this.closeOverlay);
+            } else {
+                parentElement.removeEventListener(
+                    'pointerenter',
+                    this.openOverlay
+                );
+                parentElement.removeEventListener('focusin', this.openOverlay);
+                parentElement.removeEventListener(
+                    'pointerleave',
+                    this.closeOverlay
+                );
+                parentElement.removeEventListener(
+                    'focusout',
+                    this.closeOverlay
+                );
+            }
+        }
+    }
+
+    public disconnectedCallback(): void {
+        this.closeOverlay();
+        super.disconnectedCallback();
     }
 }
