@@ -288,7 +288,7 @@ export class PickerBase extends SizedMixin(Focusable) {
 
         this.sizePopover(this.popover);
         const { popover } = this;
-        this.closeOverlay = await Picker.openOverlay(this, 'inline', popover, {
+        this.closeOverlay = await Picker.openOverlay(this, 'modal', popover, {
             placement: this.placement,
             receivesFocus: 'auto',
         });
