@@ -20,7 +20,8 @@ import {
 } from '@spectrum-web-components/base';
 import '@spectrum-web-components/theme/sp-theme.js';
 import '@spectrum-web-components/theme/src/themes.js';
-import { Color, Scale } from '@spectrum-web-components/theme';
+import '@spectrum-web-components/theme/src/express/themes.js';
+import { Color, Scale, Flavor } from '@spectrum-web-components/theme';
 import './side-nav.js';
 import layoutStyles from './layout.css';
 import '@spectrum-web-components/field-label/sp-field-label.js';
@@ -31,14 +32,19 @@ import '@spectrum-web-components/menu/sp-menu-item.js';
 import '@spectrum-web-components/action-button/sp-action-button.js';
 import '@spectrum-web-components/toast/sp-toast.js';
 
+const SWC_THEME_FLAVOR_KEY = 'swc-docs:theme:theme';
 const SWC_THEME_COLOR_KEY = 'swc-docs:theme:color';
 const SWC_THEME_SCALE_KEY = 'swc-docs:theme:scale';
 const SWC_THEME_DIR_KEY = 'swc-docs:theme:dir';
+const FLAVOR_FALLBACK = 'spectrum';
 const COLOR_FALLBACK = matchMedia('(prefers-color-scheme: dark)').matches
     ? 'dark'
     : 'light';
 const SCALE_MEDIUM = 'medium';
 const DIR_FALLBACK = 'ltr';
+const DEFAULT_FLAVOR = (window.localStorage
+    ? localStorage.getItem(SWC_THEME_FLAVOR_KEY) || FLAVOR_FALLBACK
+    : FLAVOR_FALLBACK) as Flavor;
 const DEFAULT_COLOR = (window.localStorage
     ? localStorage.getItem(SWC_THEME_COLOR_KEY) || COLOR_FALLBACK
     : COLOR_FALLBACK) as Color;
@@ -71,6 +77,9 @@ export class LayoutElement extends SpectrumElement {
     > = new Map();
 
     @property({ attribute: false })
+    public theme: Flavor = DEFAULT_FLAVOR;
+
+    @property({ attribute: false })
     public color: Color = DEFAULT_COLOR;
 
     @property({ reflect: true })
@@ -97,6 +106,10 @@ export class LayoutElement extends SpectrumElement {
 
     closeNav() {
         this.open = false;
+    }
+
+    private updateFlavor(event: Event) {
+        this.theme = (event.target as Picker).value as Flavor;
     }
 
     private updateColor(event: Event) {
@@ -170,11 +183,22 @@ export class LayoutElement extends SpectrumElement {
         `;
     }
 
+    private get themedColor(): Color {
+        return (this.color +
+            (this.theme === 'express' ? '-express' : '')) as Color;
+    }
+
+    private get themedScale(): Scale {
+        return (this.scale +
+            (this.theme === 'express' ? '-express' : '')) as Scale;
+    }
+
     render() {
         return html`
             <sp-theme
-                color=${this.color}
-                scale=${this.scale}
+                theme=${this.theme}
+                color=${this.themedColor}
+                scale=${this.themedScale}
                 dir=${this.dir}
                 id="app"
                 @sp-track-theme=${this.handleTrackTheme}
@@ -235,70 +259,90 @@ export class LayoutElement extends SpectrumElement {
                     >
                         <div id="page" @alert=${this.addAlert}>
                             <div class="manage-theme">
-                                <sp-field-label
-                                    for="theme-color"
-                                    side-aligned="start"
-                                >
-                                    Theme
-                                </sp-field-label>
-                                <sp-picker
-                                    id="theme-color"
-                                    placement="bottom"
-                                    quiet
-                                    value=${this.color}
-                                    @change=${this.updateColor}
-                                >
-                                    <sp-menu-item value="lightest">
-                                        Lightest
-                                    </sp-menu-item>
-                                    <sp-menu-item value="light">
-                                        Light
-                                    </sp-menu-item>
-                                    <sp-menu-item value="dark">
-                                        Dark
-                                    </sp-menu-item>
-                                    <sp-menu-item value="darkest">
-                                        Darkest
-                                    </sp-menu-item>
-                                </sp-picker>
-                                <sp-field-label
-                                    for="theme-scale"
-                                    side-aligned="start"
-                                >
-                                    Scale
-                                </sp-field-label>
-                                <sp-picker
-                                    id="theme-scale"
-                                    label="Scale"
-                                    placement="bottom"
-                                    quiet
-                                    value=${this.scale}
-                                    @change=${this.updateScale}
-                                >
-                                    <sp-menu-item value="medium">
-                                        Medium
-                                    </sp-menu-item>
-                                    <sp-menu-item value="large">
-                                        Large
-                                    </sp-menu-item>
-                                </sp-picker>
-                                <sp-field-label
-                                    for="theme-direction"
-                                    side-aligned="start"
-                                >
-                                    Direction
-                                </sp-field-label>
-                                <sp-picker
-                                    id="theme-direction"
-                                    label="Direction"
-                                    placement="bottom"
-                                    quiet
-                                    value=${this.dir}
-                                    @change=${this.updateDirection}
-                                >
-                                    <sp-menu-item value="ltr">LTR</sp-menu-item>
-                                    <sp-menu-item value="rtl">RTL</sp-menu-item>
-                                </sp-picker>
+                                <div>
+                                    <sp-field-label for="theme-spectrum">
+                                        Theme
+                                    </sp-field-label>
+                                    <sp-picker
+                                        id="theme-spectrum"
+                                        placement="bottom"
+                                        quiet
+                                        value=${this.theme}
+                                        @change=${this.updateFlavor}
+                                    >
+                                        <sp-menu-item value="spectrum">
+                                            Spectrum
+                                        </sp-menu-item>
+                                        <sp-menu-item value="express">
+                                            Spectrum Express
+                                        </sp-menu-item>
+                                    </sp-picker>
+                                </div>
+                                <div>
+                                    <sp-field-label for="theme-color">
+                                        Color Theme
+                                    </sp-field-label>
+                                    <sp-picker
+                                        id="theme-color"
+                                        placement="bottom"
+                                        quiet
+                                        value=${this.color}
+                                        @change=${this.updateColor}
+                                    >
+                                        <sp-menu-item value="lightest">
+                                            Lightest
+                                        </sp-menu-item>
+                                        <sp-menu-item value="light">
+                                            Light
+                                        </sp-menu-item>
+                                        <sp-menu-item value="dark">
+                                            Dark
+                                        </sp-menu-item>
+                                        <sp-menu-item value="darkest">
+                                            Darkest
+                                        </sp-menu-item>
+                                    </sp-picker>
+                                </div>
+                                <div>
+                                    <sp-field-label for="theme-scale">
+                                        Scale
+                                    </sp-field-label>
+                                    <sp-picker
+                                        id="theme-scale"
+                                        label="Scale"
+                                        placement="bottom"
+                                        quiet
+                                        value=${this.scale}
+                                        @change=${this.updateScale}
+                                    >
+                                        <sp-menu-item value="medium">
+                                            Medium
+                                        </sp-menu-item>
+                                        <sp-menu-item value="large">
+                                            Large
+                                        </sp-menu-item>
+                                    </sp-picker>
+                                </div>
+                                <div>
+                                    <sp-field-label for="theme-direction">
+                                        Direction
+                                    </sp-field-label>
+                                    <sp-picker
+                                        id="theme-direction"
+                                        label="Direction"
+                                        placement="bottom"
+                                        quiet
+                                        value=${this.dir}
+                                        @change=${this.updateDirection}
+                                    >
+                                        <sp-menu-item value="ltr">
+                                            LTR
+                                        </sp-menu-item>
+                                        <sp-menu-item value="rtl">
+                                            RTL
+                                        </sp-menu-item>
+                                    </sp-picker>
+                                </div>
                             </div>
                             ${this.renderContent()}
                         </div>
@@ -318,6 +362,9 @@ export class LayoutElement extends SpectrumElement {
     }
 
     updated(changes: PropertyValues) {
+        if (changes.has('theme') && window.localStorage) {
+            localStorage.setItem(SWC_THEME_FLAVOR_KEY, this.theme);
+        }
         if (changes.has('color') && window.localStorage) {
             localStorage.setItem(SWC_THEME_COLOR_KEY, this.color);
         }

@@ -21,6 +21,7 @@ import {
 } from '@spectrum-web-components/base';
 import '@spectrum-web-components/theme/sp-theme.js';
 import '@spectrum-web-components/theme/src/themes.js';
+import '@spectrum-web-components/theme/src/express/themes.js';
 import '@spectrum-web-components/field-label/sp-field-label.js';
 import '@spectrum-web-components/picker/sp-picker.js';
 import '@spectrum-web-components/menu/sp-menu.js';
@@ -28,7 +29,7 @@ import '@spectrum-web-components/menu/sp-menu-item.js';
 import '@spectrum-web-components/switch/sp-switch.js';
 import { Picker } from '@spectrum-web-components/picker';
 import { Switch } from '@spectrum-web-components/switch';
-import { Scale, Color } from '@spectrum-web-components/theme';
+import { Scale, Color, Flavor } from '@spectrum-web-components/theme';
 import { ActiveOverlay } from '@spectrum-web-components/overlay';
 import './types.js';
 
@@ -37,11 +38,13 @@ const urlParams = new URLSearchParams(queryString);
 
 export let dir: 'ltr' | 'rtl' =
     (urlParams.get('sp_dir') as 'ltr' | 'rtl') || 'ltr';
+export let theme: Flavor = (urlParams.get('sp_theme') as Flavor) || 'classic';
 export let color: Color = (urlParams.get('sp_color') as Color) || 'light';
 export let scale: Scale = (urlParams.get('sp_scale') as Scale) || 'medium';
 export let reduceMotion = urlParams.get('sp_reduceMotion') === 'true';
 
 window.__swc_hack_knobs__ = window.__swc_hack_knobs__ || {
+    defaultFlavor: theme,
     defaultColor: color,
     defaultScale: scale,
     defaultDirection: dir,
@@ -67,7 +70,7 @@ const reduceMotionProperties = css`
 ActiveOverlay.prototype.renderTheme = function (
     content: TemplateResult
 ): TemplateResult {
-    const { color, scale, lang } = this.theme;
+    const { color, scale, theme, lang } = this.theme;
     return html`
         ${window.__swc_hack_knobs__.defaultReduceMotion
             ? html`
@@ -79,6 +82,7 @@ ActiveOverlay.prototype.renderTheme = function (
               `
             : html``}
         <sp-theme
+            theme=${ifDefined(theme)}
             color=${ifDefined(color)}
             scale=${ifDefined(scale)}
             lang=${ifDefined(lang)}
@@ -159,6 +163,9 @@ export class StoryDecorator extends SpectrumElement {
     ];
 
     @property({ type: String })
+    public theme: Flavor = window.__swc_hack_knobs__.defaultFlavor;
+
+    @property({ type: String })
     public color: Color = window.__swc_hack_knobs__.defaultColor;
 
     @property({ type: String })
@@ -181,6 +188,9 @@ export class StoryDecorator extends SpectrumElement {
         const { value } = target as Picker;
         const { checked } = target as Switch;
         switch (id) {
+            case 'theme':
+                this.theme = theme = window.__swc_hack_knobs__.defaultFlavor = value as Flavor;
+                break;
             case 'color':
                 this.color = color = window.__swc_hack_knobs__.defaultColor = value as Color;
                 break;
@@ -206,11 +216,22 @@ export class StoryDecorator extends SpectrumElement {
         }
     }
 
+    private get themedColor(): Color {
+        return (this.color +
+            (this.theme === 'express' ? '-express' : '')) as Color;
+    }
+
+    private get themedScale(): Scale {
+        return (this.scale +
+            (this.theme === 'express' ? '-express' : '')) as Scale;
+    }
+
     protected render(): TemplateResult {
         return html`
             <sp-theme
-                color=${this.color}
-                scale=${this.scale}
+                theme=${this.theme}
+                color=${this.themedColor}
+                scale=${this.themedScale}
                 dir=${this.direction}
                 part="container"
                 @keydown=${this.handleKeydown}
@@ -246,9 +267,25 @@ export class StoryDecorator extends SpectrumElement {
     private get manageTheme(): TemplateResult {
         return html`
             <div class="manage-theme" part="controls">
-                ${this.colorControl} ${this.scaleControl} ${this.dirControl}
-                ${this.reduceMotionControl}
+                ${this.themeControl} ${this.colorControl} ${this.scaleControl}
+                ${this.dirControl} ${this.reduceMotionControl}
             </div>
+        `;
+    }
+
+    private get themeControl(): TemplateResult {
+        return html`
+            <sp-field-label for="theme">Spectrum</sp-field-label>
+            <sp-picker
+                id="theme"
+                placement="top"
+                quiet
+                .value=${this.theme}
+                @change=${this.updateTheme}
+            >
+                <sp-menu-item value="classic">Classic</sp-menu-item>
+                <sp-menu-item value="express">Express</sp-menu-item>
+            </sp-picker>
         `;
     }
 

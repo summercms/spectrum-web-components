@@ -97,12 +97,16 @@ header svg {
     justify-content: flex-end;
 }
 
-:host([dir='ltr']) .manage-theme sp-field-label {
+:host([dir='ltr']) .manage-theme > div {
     margin-left: var(--spectrum-global-dimension-size-400);
 }
 
-:host([dir='rtl']) .manage-theme sp-field-label {
+:host([dir='rtl']) .manage-theme > div {
     margin-right: var(--spectrum-global-dimension-size-400);
+}
+
+.manage-theme > div:nth-child(3) {
+    min-width: var(--spectrum-global-dimension-size-900);
 }
 
 @media screen and (min-width: 961px) {
