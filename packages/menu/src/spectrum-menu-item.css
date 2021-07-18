@@ -10,11 +10,6 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 
 THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
-#selected {
-    /* .spectrum-Menu-checkmark */
-    transform: scale(1);
-    opacity: 1;
-}
 :host([dir='ltr']) {
     /* [dir=ltr] .spectrum-Menu-item */
     border-left: var(--spectrum-listitem-focus-indicator-size) solid transparent;
@@ -65,7 +60,7 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
             )
     );
 }
-:host([selected]) #selected {
+:host([selected]) .checkmark {
     /* .spectrum-Menu-item.is-selected .spectrum-Menu-checkmark */
     display: block;
 }
@@ -120,28 +115,17 @@ slot[name='icon'] + #label,
     white-space: nowrap;
     overflow: hidden;
 }
-#selected {
-    /* .spectrum-Menu-checkmark */
-    display: none;
-    align-self: flex-start;
-}
-:host([dir='ltr']) #selected,
+:host([dir='ltr']) .checkmark,
 :host([dir='ltr']) .chevron {
     /* [dir=ltr] .spectrum-Menu-checkmark,
    * [dir=ltr] .spectrum-Menu-chevron */
     margin-left: var(--spectrum-listitem-icon-gap);
 }
-:host([dir='rtl']) #selected,
+:host([dir='rtl']) .checkmark,
 :host([dir='rtl']) .chevron {
     /* [dir=rtl] .spectrum-Menu-checkmark,
    * [dir=rtl] .spectrum-Menu-chevron */
     margin-right: var(--spectrum-listitem-icon-gap);
-}
-#selected {
-    /* .spectrum-Menu-checkmark,
-   * .spectrum-Menu-chevron */
-    flex-grow: 0;
-    margin-top: var(--spectrum-listitem-icon-margin-top);
 }
 :host([dir='rtl']) .chevron {
     /* [dir=rtl] .spectrum-Menu-chevron */
@@ -217,7 +201,7 @@ slot[name='icon'] + #label,
         var(--spectrum-alias-text-color)
     );
 }
-:host([selected]) #selected {
+:host([selected]) .checkmark {
     /* .spectrum-Menu-item.is-selected .spectrum-Menu-checkmark */
     color: var(
         --spectrum-listitem-m-icon-color-selected,

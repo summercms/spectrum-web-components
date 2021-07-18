@@ -54,6 +54,7 @@
         "@spectrum-web-components/base": "^0.4.5",
         "@spectrum-web-components/icon": "^0.9.9",
         "@spectrum-web-components/icons-ui": "^0.6.9",
+        "@spectrum-web-components/overlay": "^0.11.11",
         "@spectrum-web-components/shared": "^0.12.7",
         "tslib": "^2.0.0"
     },
