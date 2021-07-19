@@ -206,8 +206,8 @@ slot[name='icon'] + #label,
 :host([selected]) .checkmark {
     /* .spectrum-Menu-item.is-selected .spectrum-Menu-checkmark */
     color: var(
-        --spectrum-listitem-m-texticon-ui-icon-color-selected,
-        var(--spectrum-alias-icon-color-selected)
+        --spectrum-listitem-m-texticon-icon-color-selected,
+        var(--spectrum-alias-icon-color-selected-neutral-subdued)
     );
 }
 .is-active,
