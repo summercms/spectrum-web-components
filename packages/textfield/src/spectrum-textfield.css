@@ -466,6 +466,16 @@ THIS FILE IS MACHINE GENERATED. DO NOT EDIT */
     height: var(--spectrum-textfield-texticon-height);
     min-height: var(--spectrum-textfield-texticon-height);
 }
+:host {
+    /* .spectrum-Textfield */
+    --spectrum-textfield-m-texticon-validation-icon-color-valid: var(
+        --spectrum-semantic-positive-icon-color,
+        var(--spectrum-global-color-green-600)
+    );
+    --spectrum-textfield-m-texticon-validation-icon-color-invalid-disabled: var(
+        --spectrum-global-color-gray-500
+    );
+}
 :host(:hover) .input {
     /* .spectrum-Textfield:hover .spectrum-Textfield-input */
     border-color: var(
