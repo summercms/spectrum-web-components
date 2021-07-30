@@ -507,7 +507,12 @@ describe('ColorSlider', () => {
         expect(el.sliderHandlePosition).to.equal(53.125);
     });
     it('accepts pointer events in dir="rtl"', async () => {
-        const el = await fixture<ColorSlider>(
+        document.documentElement.dir = 'rtl';
+        const el = await fixture<
+            ColorSlider & {
+                handle: HTMLElement;
+            }
+        >(
             html`
                 <sp-color-slider
                     dir="rtl"
@@ -515,10 +520,9 @@ describe('ColorSlider', () => {
                 ></sp-color-slider>
             `
         );
-        document.documentElement.dir = 'rtl';
         await elementUpdated(el);
 
-        const { handle } = (el as unknown) as { handle: HTMLElement };
+        const { handle } = el;
         const clientWidth = document.documentElement.offsetWidth;
 
         handle.setPointerCapture = () => {
@@ -530,13 +534,13 @@ describe('ColorSlider', () => {
 
         expect(el.sliderHandlePosition).to.equal(0);
 
-        const root = el.shadowRoot ? el.shadowRoot : el;
-        const gradient = root.querySelector('.gradient') as HTMLElement;
-
+        const gradient = el.shadowRoot.querySelector(
+            '.gradient'
+        ) as HTMLElement;
         gradient.dispatchEvent(
             new PointerEvent('pointerdown', {
                 pointerId: 1,
-                clientX: clientWidth - 100,
+                clientX: 700,
                 clientY: 15,
                 bubbles: true,
                 composed: true,
