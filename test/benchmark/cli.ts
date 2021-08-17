@@ -215,7 +215,7 @@ $ node test/benchmark/cli -n 20
                     },
                     measurement: 'global',
                     browser: {
-                        name: 'chrome',
+                        name: 'firefox',
                         headless: true,
                         windowSize: {
                             width: 800,
@@ -229,7 +229,7 @@ $ node test/benchmark/cli -n 20
                 url: `test/benchmark/bench-runner.html?bench=${benchmark}&package=${packageName}`,
                 measurement: 'global',
                 browser: {
-                    name: 'chrome',
+                    name: 'firefox',
                     headless: true,
                     windowSize: {
                         width: 800,
