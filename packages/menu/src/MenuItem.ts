@@ -228,7 +228,7 @@ export class MenuItem extends LikeAnchor(Focusable) {
                 ? html`
                       <sp-icon-checkmark100
                           id="selected"
-                          class="spectrum-UIIcon-Checkmark100 icon"
+                          class="spectrum-UIIcon-Checkmark100 icon checkmark"
                       ></sp-icon-checkmark100>
                   `
                 : html``}

@@ -99,10 +99,6 @@ const config = {
                     selector: '.spectrum-Menu-itemLabel',
                     name: 'label',
                 },
-                {
-                    selector: '.spectrum-Menu-checkmark',
-                    name: 'selected',
-                },
             ],
             classes: [
                 {
@@ -113,6 +109,10 @@ const config = {
                     selector: '.spectrum-Menu-chevron',
                     name: 'chevron',
                 },
+                {
+                    selector: '.spectrum-Menu-checkmark',
+                    name: 'checkmark',
+                },
             ],
             slots: [
                 {
@@ -120,13 +120,37 @@ const config = {
                     selector: '.spectrum-Icon',
                 },
             ],
-            exclude: [/\.spectrum-Menu(?!-[itemLabel|item|checkmark|chevron])/],
+            exclude: [/\.spectrum-Menu(?!-[item|itemLabel|checkmark|chevron])/],
             complexSelectors: [
                 {
                     replacement: ':host([no-wrap]) #label',
                     selector: '.spectrum-Menu-itemLabel--wrapping',
                 },
             ],
+        },
+        {
+            name: 'itemLabel',
+            host: {
+                selector: '.spectrum-Menu-itemLabel',
+                shadowSelector: '#label',
+            },
+            exclude: [/\.spectrum-Menu(?!-itemLabel)/, /^\[dir=/],
+        },
+        {
+            name: 'chevron',
+            host: {
+                selector: '.spectrum-Menu-chevron',
+                shadowSelector: '.chevron',
+            },
+            exclude: [/\.spectrum-Menu(?!-chevron)/, /^\[dir=/],
+        },
+        {
+            name: 'checkmark',
+            host: {
+                selector: '.spectrum-Menu-checkmark',
+                shadowSelector: '.checkmark',
+            },
+            exclude: [/\.spectrum-Menu(?!-checkmark)/, /^\[dir=/],
         },
         {
             name: 'menu-divider',
