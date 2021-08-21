@@ -44,7 +44,9 @@
         "lit-html"
     ],
     "dependencies": {
-        "lit": "^2.0.0-rc.2",
+        "@lit-labs/scoped-registry-mixin": "^1.0.0-rc.2",
+        "@webcomponents/scoped-custom-element-registry": "^0.0.3",
+        "lit": "^2.0.0-rc.3",
         "tslib": "^2.0.0"
     },
     "types": "./src/index.d.ts",

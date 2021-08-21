@@ -184,12 +184,18 @@ noVisibleLabels.args = {
 };
 
 class NumberFieldDefined extends HTMLElement {
-    constructor() {
-        super();
+    public connectedCallback(): void {
         this.numberFieldLoaderPromise = new Promise((res) => {
-            customElements.whenDefined('sp-number-field').then(() => {
-                res(true);
-            });
+            ((this.previousElementSibling?.querySelector('sp-slider')
+                ?.constructor as unknown) as {
+                registry: {
+                    whenDefined: (name: string) => Promise<void>;
+                };
+            }).registry
+                .whenDefined('sp-number-field')
+                .then(() => {
+                    res(true);
+                });
         });
     }
 
