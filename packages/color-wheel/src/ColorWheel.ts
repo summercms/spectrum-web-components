@@ -184,8 +184,6 @@ export class ColorWheel extends Focusable {
 
     private _altered = 0;
 
-    private altKeys = new Set();
-
     @query('input')
     public input!: HTMLInputElement;
 
@@ -195,10 +193,10 @@ export class ColorWheel extends Focusable {
 
     private handleKeydown(event: KeyboardEvent): void {
         const { key } = event;
-        if (['Shift', 'Meta', 'Control', 'Alt'].includes(key)) {
-            this.altKeys.add(key);
-            this.altered = this.altKeys.size;
-        }
+        this.focused = true;
+        this.altered = [event.shiftKey, event.ctrlKey, event.altKey].filter(
+            (key) => !!key
+        ).length;
         let delta = 0;
         switch (key) {
             case 'ArrowUp':
@@ -238,15 +236,6 @@ export class ColorWheel extends Focusable {
         }
     }
 
-    private handleKeyup(event: KeyboardEvent): void {
-        event.preventDefault();
-        const { key } = event;
-        if (['Shift', 'Meta', 'Control', 'Alt'].includes(key)) {
-            this.altKeys.delete(key);
-            this.altered = this.altKeys.size;
-        }
-    }
-
     private handleInput(event: Event & { target: HTMLInputElement }): void {
         const { valueAsNumber } = event.target;
 
@@ -268,21 +257,27 @@ export class ColorWheel extends Focusable {
     }
 
     private handleFocusout(): void {
+        if (this._pointerDown) {
+            return;
+        }
+        this.altered = 0;
         this.focused = false;
     }
 
     private boundingClientRect!: DOMRect;
+    private _pointerDown = false;
 
     private handlePointerdown(event: PointerEvent): void {
         if (event.button !== 0) {
             event.preventDefault();
             return;
         }
+        this._pointerDown = true;
         this._previousColor = this._color.clone();
         this.boundingClientRect = this.getBoundingClientRect();
         (event.target as HTMLElement).setPointerCapture(event.pointerId);
         if (event.pointerType === 'mouse') {
-            this.handleFocusin();
+            this.focused = true;
         }
     }
 
@@ -300,7 +295,7 @@ export class ColorWheel extends Focusable {
     }
 
     private handlePointerup(event: PointerEvent): void {
-        // Retain focus on input element after mouse up to enable keyboard interactions
+        this._pointerDown = false;
         (event.target as HTMLElement).releasePointerCapture(event.pointerId);
 
         const applyDefault = this.dispatchEvent(
@@ -313,9 +308,10 @@ export class ColorWheel extends Focusable {
         if (!applyDefault) {
             this._color = this._previousColor;
         }
+        // Retain focus on input element after mouse up to enable keyboard interactions
         this.focus();
         if (event.pointerType === 'mouse') {
-            this.handleFocusout();
+            this.focused = false;
         }
     }
 
@@ -373,7 +369,6 @@ export class ColorWheel extends Focusable {
             </slot>
 
             <sp-color-handle
-                tabindex="-1"
                 class="handle"
                 color="hsl(${this.value}, 100%, 50%)"
                 ?disabled=${this.disabled}
@@ -399,7 +394,6 @@ export class ColorWheel extends Focusable {
                 @input=${this.handleInput}
                 @change=${this.handleChange}
                 @keydown=${this.handleKeydown}
-                @keyup=${this.handleKeyup}
             />
         `;
     }

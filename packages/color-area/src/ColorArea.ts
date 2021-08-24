@@ -199,8 +199,6 @@ export class ColorArea extends SpectrumElement {
 
     private _altered = 0;
 
-    private altKeys = new Set();
-
     private activeKeys = new Set();
 
     private handleFocusin(): void {
@@ -208,15 +206,18 @@ export class ColorArea extends SpectrumElement {
     }
 
     private handleFocusout(): void {
+        if (this._pointerDown) {
+            return;
+        }
         this.focused = false;
     }
 
     private handleKeydown(event: KeyboardEvent): void {
-        const { key, code } = event;
-        if (['Shift', 'Meta', 'Control', 'Alt'].includes(key)) {
-            this.altKeys.add(key);
-            this.altered = this.altKeys.size;
-        }
+        const { code } = event;
+        this.focused = true;
+        this.altered = [event.shiftKey, event.ctrlKey, event.altKey].filter(
+            (key) => !!key
+        ).length;
         if (code.search('Arrow') === 0) {
             this.activeKeys.add(code);
             event.preventDefault();
@@ -282,14 +283,8 @@ export class ColorArea extends SpectrumElement {
 
     private handleKeyup(event: KeyboardEvent): void {
         event.preventDefault();
-        const { key, code } = event;
-        if (['Shift', 'Meta', 'Control', 'Alt'].includes(key)) {
-            this.altKeys.delete(key);
-            this.altered = this.altKeys.size;
-        }
-        if (code.search('Arrow') === 0) {
-            this.activeKeys.delete(code);
-        }
+        const { code } = event;
+        this.activeKeys.delete(code);
     }
 
     private handleInput(event: Event & { target: HTMLInputElement }): void {
@@ -310,18 +305,19 @@ export class ColorArea extends SpectrumElement {
     }
 
     private boundingClientRect!: DOMRect;
+    private _pointerDown = false;
 
     private handlePointerdown(event: PointerEvent): void {
         if (event.button !== 0) {
             event.preventDefault();
             return;
         }
+        this._pointerDown = true;
         this._previousColor = this._color.clone();
         this.boundingClientRect = this.getBoundingClientRect();
-
         (event.target as HTMLElement).setPointerCapture(event.pointerId);
         if (event.pointerType === 'mouse') {
-            this.handleFocusin();
+            this.focused = true;
         }
     }
 
@@ -342,6 +338,7 @@ export class ColorArea extends SpectrumElement {
 
     private handlePointerup(event: PointerEvent): void {
         event.preventDefault();
+        this._pointerDown = false;
         (event.target as HTMLElement).releasePointerCapture(event.pointerId);
         const applyDefault = this.dispatchEvent(
             new Event('change', {
@@ -352,7 +349,7 @@ export class ColorArea extends SpectrumElement {
         );
         this.inputX.focus();
         if (event.pointerType === 'mouse') {
-            this.handleFocusout();
+            this.focused = false;
         }
         if (!applyDefault) {
             this._color = this._previousColor;
@@ -416,7 +413,7 @@ export class ColorArea extends SpectrumElement {
             </div>
 
             <sp-color-handle
-                tabindex="-1"
+                ?focused=${this.focused}
                 class="handle"
                 color=${this._color.toHslString()}
                 ?disabled=${this.disabled}
